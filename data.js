@@ -19,10 +19,10 @@ const content = {
       { text: 'O nas', href: '/o-nas' },
     ],
     offers: [
-      {meters: 240, usemeters: 120, groundmeters: 4, floors: 2, underground: "tak", heat: "Gazowe", garage: "tak", carplaces: 1, attic: "tak", washroom: 2, rooms: 5},
-      {meters: 200, usemeters: 121, groundmeters: 4, floors: 2, underground: "tak", heat: "Gazowe", garage: "tak", carplaces: 1, attic: "tak", washroom: 2, rooms: 5},
-      {meters: 220, usemeters: 120, groundmeters: 4, floors: 2, underground: "tak", heat: "Gazowe", garage: "tak", carplaces: 1, attic: "tak", washroom: 2, rooms: 5},
-      {meters: 210, usemeters: 121, groundmeters: 4, floors: 2, underground: "tak", heat: "Gazowe", garage: "tak", carplaces: 1, attic: "tak", washroom: 2, rooms: 5}
+      {meters: 240, usemeters: 120, groundmeters: 4, floors: 2, underground: "tak", heat: "Gazowe", garage: "tak", carplaces: 1, attic: "tak", bathrooms: 2, rooms: 5},
+      {meters: 200, usemeters: 121, groundmeters: 4, floors: 2, underground: "tak", heat: "Gazowe", garage: "tak", carplaces: 1, attic: "tak", bathrooms: 2, rooms: 5},
+      {meters: 220, usemeters: 120, groundmeters: 4, floors: 2, underground: "tak", heat: "Gazowe", garage: "tak", carplaces: 1, attic: "tak", bathrooms: 2, rooms: 5},
+      {meters: 210, usemeters: 121, groundmeters: 4, floors: 2, underground: "tak", heat: "Gazowe", garage: "tak", carplaces: 1, attic: "tak", bathrooms: 2, rooms: 5}
     ]
   };
   export default content;

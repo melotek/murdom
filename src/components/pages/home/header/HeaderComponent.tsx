@@ -1,6 +1,6 @@
 import { Box, Container, Typography, useTheme } from '@mui/material'
 import React from 'react'
-import Image from "next/Image"
+import Image from "next/image"
 import LinkButtonContained from '@buttons/ButtonContained'
 type Props = {}
 

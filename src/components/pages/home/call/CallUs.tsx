@@ -1,6 +1,6 @@
 import { Box, Container, Paper, Typography, useMediaQuery, useTheme } from '@mui/material'
 import React, { useState } from 'react'
-import Image from "next/Image"
+import Image from "next/image"
 
 type Props = {}
 
@@ -26,7 +26,7 @@ const matches = useMediaQuery('(min-width:600px)')
              Nasze domy i mieszkania kupiło dotychczas, dziesiątki nowych właścicieli.
                 </Typography>
                 {
-                 matches &&    <Typography > </Typography>
+                 matches &&    <Typography > Inwesty</Typography>
 
                 }
 <Typography  component="p" color={theme.palette.success.main}>Dziękujemy, że zainwestowali Państwo w leśne osiedle Rąbień AB. 

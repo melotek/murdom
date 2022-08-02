@@ -19,6 +19,7 @@
     "@mui/icons-material": "latest",
     "@mui/material": "latest",
     "hamburger-react": "^2.5.0",
+    "lodash": "^4.17.21",
     "next": "^12.2.4-canary.8",
     "next-fonts": "^1.5.1",
     "react": "latest",

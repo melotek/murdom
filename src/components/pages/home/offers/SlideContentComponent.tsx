@@ -101,9 +101,9 @@ const SlideContentComponent = ({ offers: {
      
          
             <RowComponent theme={theme} title="Ogrzewanie:" value={heat} />
-            <RowComponent theme={theme} icon={<SvgBedroom/>} title="Pokoje:" value={rooms} />
+            {/* <RowComponent theme={theme} icon={<SvgBedroom/>} title="Pokoje:" value={rooms} />
             <RowComponent theme={theme} icon={<SvgBathroom/>}  title="Łazienki:" value={washroom} />
-            <RowComponent theme={theme}  icon={<SvgGarage/>} title="Miejsca postojowe w garażu:" value={washroom} />
+            <RowComponent theme={theme}  icon={<SvgGarage/>} title="Miejsca postojowe w garażu:" value={washroom} /> */}
         </Box>
     )
 }

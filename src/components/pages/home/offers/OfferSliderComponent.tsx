@@ -5,13 +5,17 @@ import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import 'swiper/css';
 import "swiper/css/effect-fade";
+import {filter} from "lodash";
 
-import Image from "next/Image"
+import Image from "next/image"
 import NavigateBeforeIcon from '@mui/icons-material/NavigateBefore';
 import NavigateNextIcon from '@mui/icons-material/NavigateNext';
-import { Box, Container, Divider, IconButton, Typography, useTheme } from '@mui/material';
+import { Box, Container, Divider, Icon, IconButton, Typography, useTheme } from '@mui/material';
 import content from "../../../../../data"
 import SlideContentComponent from './SlideContentComponent';
+import SvgBedroom from 'src/UI/Bedroom';
+import SvgBathroom from 'src/UI/Bathroom';
+import SvgGarage from 'src/UI/Garage';
 
 type Props = {}
 
@@ -37,8 +41,13 @@ const OfferSliderComponent = (props: Props) => {
         contentRef!.current.swiper.slidePrev()
         setCurrentSlide(swiper.realIndex + 1)
     }
-
-
+    const numOfRooms = content.offers[currentSlide].rooms;
+    const numOfBathRooms = content.offers[currentSlide].bathrooms;
+    const numOfCarPlaces =content.offers[currentSlide].carplaces;
+    // <RowComponent theme={theme} icon={<SvgBedroom/>} title="Pokoje:" value={rooms} />
+    // <RowComponent theme={theme} icon={<SvgBathroom/>}  title="Łazienki:" value={washroom} />
+    // <RowComponent theme={theme}  icon={<SvgGarage/>} title="Miejsca postojowe w garażu:" />
+    console.log(numOfCarPlaces)
     return (
         <Container>
             <Box mb={8}>
@@ -94,6 +103,41 @@ const OfferSliderComponent = (props: Props) => {
                     >
 
                         <SwiperSlide><Image layout='responsive' width={170} height={110} src="/IMG-20220629-WA0004.jpg" />
+                        <Box>
+
+                  
+                        <Box display="flex"  alignItems="center">
+                        <Icon sx={{width: "2em", height: "auto", marginRight: 1}}  >
+                        <SvgBedroom/>
+            </Icon>
+        
+                        
+<Typography color={theme.palette.primary.main} variant="h5" component="caption"> &#10006; {numOfRooms}</Typography>
+       
+
+                        </Box>      
+                        <Box display="flex"  alignItems="center">
+                        <Icon sx={{width: "2em", height: "auto", marginRight: 1}}  >
+                        <SvgBathroom/>
+            </Icon>
+        
+                        
+<Typography color={theme.palette.primary.main} variant="h5" component="caption"> &#10006; {numOfBathRooms}</Typography>
+       
+
+                        </Box>      
+                        <Box display="flex"  alignItems="center">
+                        <Icon sx={{width: "2em", height: "auto", marginRight: 1}}  >
+                        <SvgGarage/>
+            </Icon>
+        
+                        
+<Typography color={theme.palette.primary.main} variant="h5" component="caption"> &#10006; {numOfCarPlaces}</Typography>
+       
+
+                        </Box>      
+                        
+                        </Box>
 
 
                         </SwiperSlide>

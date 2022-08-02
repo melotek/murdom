@@ -1,6 +1,6 @@
 import { Box, Container, ContainerProps, ListProps, BoxProps, easing, Link, List, ListItem, styled, useTheme, Slide, Typography } from '@mui/material'
 import React, { useEffect, useRef, useState } from 'react'
-import Image from "next/Image"
+import Image from "next/image"
 import Hamburger from 'hamburger-react'
 import { NextLink } from 'src/components/shared/link'
 import content from "../../../../data"
