@@ -66,8 +66,13 @@ const OfferSliderComponent = (props: Props) => {
     const handlePrev = () => {
         swiperRef!.current.swiper.slidePrev()
         contentRef!.current.swiper.slidePrev()
-        setCurrentSlide(swiper.realIndex + 1)
+
+
     }
+    const printCurrentSlide = (e) => {
+        setCurrentSlide(e.realIndex + 1)
+    }
+
 
     return (
         <Container>
@@ -107,12 +112,18 @@ const OfferSliderComponent = (props: Props) => {
                             swiperRef.current = core.el;
                             // "swiper.el" is what you want
                         }}
+                        onSlideChange={printCurrentSlide}
+                        autoplay={{
+                            delay: 3000
+                        }}
                         loop={true}
-                        modules={[Navigation]}
+                        modules={[Navigation, Autoplay]}
                         className="mySwiper"
                     >
                         {offers.map((_: { image: string, bathrooms: number, carplaces: number, rooms: number }) =>
-                            <SwiperSlide key={_.image}><Image layout='responsive' width={170} height={110} src={_.image} />
+                            <SwiperSlide key={_.image}><Image layout='responsive' width={170} height={110} src={_.image}
+
+                            />
                                 <Divider sx={{ marginBottom: .5, marginTop: .5 }} />
                                 <SliderLegend numOfBathRooms={_.bathrooms} numOfCarPlaces={_.carplaces} numOfRooms={_.rooms} />
                             </SwiperSlide>
@@ -124,8 +135,10 @@ const OfferSliderComponent = (props: Props) => {
                         slidesPerView={1}
                         spaceBetween={30}
                         effect={"fade"}
-
-                        modules={[Navigation, EffectFade]}
+                        autoplay={{
+                            delay: 3000
+                        }}
+                        modules={[Navigation, EffectFade, Autoplay]}
                         loop={true}
                         // modules={[EffectFade]}
                         className="mySwiper"
@@ -151,4 +164,8 @@ const OfferSliderComponent = (props: Props) => {
 }
 
 export default OfferSliderComponent
+
+function useCallback(arg0: () => void, arg1: undefined[]) {
+    throw new Error('Function not implemented.');
+}
 

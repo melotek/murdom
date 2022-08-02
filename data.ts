@@ -5,10 +5,17 @@ export type Offers = {
   livingspace: number
 }
 
+export type Testimony = {
+  image: string,
+  name: string,
+  content: string
+}
+
 export type Content = {
   head: any,
   navbar: any,
-  offers: Offers[]
+  offers: Offers[],
+  testimonies: Testimony[]
 
 }
 
@@ -46,6 +53,17 @@ const content: Content = {
       meters: 220, livingmeters: 200, groundmeters: 4, floors: 2, underground: "tak", heat: "Gazowe", garage: "tak", carplaces: 1, attic: "tak", bathrooms: 2, rooms: 5, livingspace: 100
     },
     { image: "/IMG-20220629-WA0028.jpg", meters: 200, livingmeters: 180, groundmeters: 4, floors: 2, underground: "tak", heat: "Gazowe", garage: "tak", carplaces: 1, attic: "tak", bathrooms: 2, rooms: 5, livingspace: 100 }
+  ],
+  testimonies: [
+    {
+      image: "/testimony1.jpg",
+      name: "Maciej i Agnieszka",
+      content: "Możemy z całą odpowiedzialnością polecić Państwu firmę Murdom, w 2018 kupiliślmy mieszkanie w apartementowcu, deweloper dostosował nieruchomość do naszych indywidualnych potrzeb."
+    },
+    {
+      image: "/testimony2.jpg",
+      name: "Robert i Izabela", content: "Jesteśmy bardzo zadowoleni, z jakości materiałów, oraz solidności budynku"
+    }
   ]
 };
 export default content;

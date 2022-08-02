@@ -9,7 +9,7 @@ type NextLinkProps = Omit<ButtonProps, 'href'> &
 const LinkButtonContained = ({ href, as, prefetch, locale, children, ...props }: NextLinkProps, ref: Ref<LinkRef>) => {
   return (
     <Link href={href} as={as} prefetch={prefetch} locale={locale} passHref>
-      <Button variant="contained" size='large' ref={ref} {...props} sx={{ letterSpacing: 2.3 }} >
+      <Button disableElevation disableFocusRipple variant="contained" size='large' ref={ref} {...props} sx={{ letterSpacing: 2.3 }} >
         {children}
 
       </Button>
