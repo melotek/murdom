@@ -1,0 +1,6 @@
+export { default as Basement } from './Basement'
+export { default as Bathroom } from './Bathroom'
+export { default as Bedroom } from './Bedroom'
+export { default as Garage } from './Garage'
+export { default as Garret } from './Garret'
+export { default as Patio } from './Patio'

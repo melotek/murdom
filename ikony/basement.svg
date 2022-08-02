@@ -1,0 +1,44 @@
+<svg width="87" height="84" viewBox="0 0 87 84" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect x="1" y="1" width="33" height="8" stroke="black" stroke-width="2"/>
+<rect x="62" y="1" width="19" height="29" stroke="black" stroke-width="2"/>
+<rect x="7" y="56" width="14" height="12" stroke="black" stroke-width="2"/>
+<rect x="2" y="68" width="14" height="15" stroke="black" stroke-width="2"/>
+<rect x="16" y="68" width="14" height="15" stroke="black" stroke-width="2"/>
+<line x1="58.25" y1="30.25" x2="58.25" y2="81.75" stroke="black" stroke-width="2.5" stroke-linecap="round"/>
+<line x1="84.25" y1="30.25" x2="84.25" y2="81.75" stroke="black" stroke-width="2.5" stroke-linecap="round"/>
+<line x1="56" y1="30" x2="86" y2="30" stroke="black" stroke-width="2" stroke-linecap="round"/>
+<line x1="56" y1="37" x2="86" y2="37" stroke="black" stroke-width="2" stroke-linecap="round"/>
+<line x1="56" y1="44" x2="86" y2="44" stroke="black" stroke-width="2" stroke-linecap="round"/>
+<line x1="56" y1="51" x2="86" y2="51" stroke="black" stroke-width="2" stroke-linecap="round"/>
+<line x1="56" y1="58" x2="86" y2="58" stroke="black" stroke-width="2" stroke-linecap="round"/>
+<line x1="56" y1="65" x2="86" y2="65" stroke="black" stroke-width="2" stroke-linecap="round"/>
+<line x1="56" y1="72" x2="86" y2="72" stroke="black" stroke-width="2" stroke-linecap="round"/>
+<line x1="56" y1="79" x2="86" y2="79" stroke="black" stroke-width="2" stroke-linecap="round"/>
+<line x1="72" x2="72" y2="30" stroke="black" stroke-width="2"/>
+<line x1="61" y1="14" x2="81" y2="14" stroke="black" stroke-width="2"/>
+<path d="M12 30L12 55.5" stroke="black" stroke-width="2"/>
+<path d="M11 29H50" stroke="black" stroke-width="2"/>
+<line x1="49" y1="29" x2="49" y2="84" stroke="black" stroke-width="2"/>
+<path d="M13 40.5H48.5" stroke="black" stroke-width="2"/>
+<path d="M13 50.5H48" stroke="black" stroke-width="2"/>
+<path d="M21 60.5H48" stroke="black" stroke-width="2"/>
+<path d="M31 78.5H48" stroke="black" stroke-width="2"/>
+<line x1="41.5" y1="55" x2="41.5" y2="60" stroke="black"/>
+<line x1="29.5" y1="35" x2="29.5" y2="40" stroke="black"/>
+<line x1="29" y1="34.5" x2="32" y2="34.5" stroke="black"/>
+<path d="M32.5 34V37" stroke="black"/>
+<line x1="32" y1="36.5" x2="35" y2="36.5" stroke="black"/>
+<path d="M35.5 36V40" stroke="black"/>
+<line x1="44.5" x2="44.5" y2="10" stroke="black"/>
+<path d="M25.5 38.5C25.5 38.9558 25.203 39.444 24.5634 39.8438C23.9309 40.2391 23.0259 40.5 22 40.5C20.9741 40.5 20.0691 40.2391 19.4366 39.8438C18.797 39.444 18.5 38.9558 18.5 38.5C18.5 38.0442 18.797 37.556 19.4366 37.1562C20.0691 36.7609 20.9741 36.5 22 36.5C23.0259 36.5 23.9309 36.7609 24.5634 37.1562C25.203 37.556 25.5 38.0442 25.5 38.5Z" stroke="black"/>
+<rect x="25.5" y="47.5" width="6" height="3" stroke="black"/>
+<rect x="35.5" y="45.5" width="6" height="5" stroke="black"/>
+<rect x="36.5" y="57.5" width="2" height="3" stroke="black"/>
+<path d="M42.5 69V78.5H37.5L37.5 69C37.5 67.6193 38.6193 66.5 40 66.5C41.3807 66.5 42.5 67.6193 42.5 69Z" stroke="black"/>
+<path d="M49.5 15C49.5 17.4415 47.3073 19.5 44.5 19.5C41.6927 19.5 39.5 17.4415 39.5 15C39.5 12.5585 41.6927 10.5 44.5 10.5C47.3073 10.5 49.5 12.5585 49.5 15Z" stroke="black"/>
+<line x1="12.5" x2="12.5" y2="10" stroke="black"/>
+<line x1="22.5" x2="22.5" y2="8" stroke="black"/>
+<rect x="8.75" y="64.75" width="1.5" height="1.5" stroke="black" stroke-width="1.5"/>
+<rect x="4" y="79" width="2" height="3" stroke="black" stroke-width="2"/>
+<rect x="24.5" y="73.5" width="4" height="1" stroke="black"/>
+</svg>

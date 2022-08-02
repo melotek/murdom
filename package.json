@@ -1,0 +1,38 @@
+{
+  "name": "nextjs-with-typescript",
+  "version": "5.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "build:library": "npm run generate",
+    "start": "next start",
+    "lint": "next lint",
+    "generate": "svg-to-ts --config ./myconfig.json",
+    "post-update": "echo \"codesandbox preview only, need an update\" && yarn upgrade --latest"
+  },
+  "dependencies": {
+    "@emotion/cache": "latest",
+    "@emotion/react": "latest",
+    "@emotion/server": "latest",
+    "@emotion/styled": "latest",
+    "@mui/icons-material": "latest",
+    "@mui/material": "latest",
+    "hamburger-react": "^2.5.0",
+    "next": "^12.2.4-canary.8",
+    "next-fonts": "^1.5.1",
+    "react": "latest",
+    "react-dom": "latest",
+    "svg-to-ts": "^8.8.1",
+    "swiper": "^8.3.2"
+  },
+  "devDependencies": {
+    "@types/node": "latest",
+    "@types/react": "latest",
+    "cpx": "^1.5.0",
+    "eslint": "latest",
+    "eslint-config-next": "latest",
+    "file-loader": "^6.2.0",
+    "typescript": "latest"
+  }
+}
