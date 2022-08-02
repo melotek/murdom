@@ -1,11 +1,10 @@
 import ButtonContained from '@buttons/ButtonContained'
-import { Box, Container, Divider, Paper, Typography, useMediaQuery, useTheme } from '@mui/material'
+import { Box, Container, Divider, Paper, Typography, useTheme } from '@mui/material'
 import Image from "next/image"
 
 type Props = {}
 
-const CallUsComponent = (props: Props) => {
-  const matches = useMediaQuery('(min-width:600px)')
+const CallUsComponent = () => {
 
   //  const [offsetTop, printOffsetTop] = useState<any>([]);
 

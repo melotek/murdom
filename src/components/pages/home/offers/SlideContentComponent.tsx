@@ -1,4 +1,4 @@
-import { Box, Theme, Typography, useMediaQuery, useTheme } from '@mui/material'
+import { Box, Theme, Typography, useTheme } from '@mui/material'
 type Props = {
     offers: {
         meters: number,
@@ -65,7 +65,6 @@ const SlideContentComponent = ({ offers: {
     rooms } }: Props) => {
 
     const theme = useTheme()
-    const matches = useMediaQuery(theme.breakpoints.up("md"))
 
 
     return (

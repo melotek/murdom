@@ -16,13 +16,16 @@
     "moduleResolution": "node",
     "resolveJsonModule": true,
     "isolatedModules": true,
+    "noImplicitAny": true,
     "jsx": "preserve",
     "baseUrl": ".", /* Base directory to resolve non-absolute module names. */
     "paths": {
       "@footer/*": [
         "./src/components/layout/footer/*"
       ],
-      "@UI/*": [".src/UI/*"],
+      "@UI/*": [
+        ".src/UI/*"
+      ],
       "@navbar/*": [
         "./src/components/layout/navbar/*"
       ],
