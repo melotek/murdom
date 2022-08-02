@@ -68,7 +68,7 @@ const OfferSliderComponent = (props: Props) => {
 
 
     }
-    const printCurrentSlide = (e) => {
+    const printCurrentSlide = (e: any) => {
         setCurrentSlide(e.realIndex + 1)
     }
 
