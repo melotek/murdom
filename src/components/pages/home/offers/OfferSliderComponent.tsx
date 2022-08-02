@@ -4,7 +4,7 @@ import 'swiper/css';
 import "swiper/css/effect-fade";
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
-import { Swiper, SwiperClass, SwiperSlide } from "swiper/react";
+import { Swiper, SwiperSlide } from "swiper/react";
 
 import NavigateBeforeIcon from '@mui/icons-material/NavigateBefore';
 import NavigateNextIcon from '@mui/icons-material/NavigateNext';
@@ -50,7 +50,7 @@ const SliderLegend = ({ numOfRooms, numOfBathRooms, numOfCarPlaces }: any) => {
 const OfferSliderComponent = (props: Props) => {
     const swiperRef = useRef<SwiperCore>() as any;
     const contentRef = useRef<SwiperCore>() as any;
-    const [swiper, setSwiper] = useState(null);
+    const [swiper, setSwiper] = useState<SwiperCore>();
     const [contentSwiper, setContentSwiper] = useState(null);
     const [currentSlide, setCurrentSlide] = useState(1)
     const theme = useTheme()
@@ -68,7 +68,7 @@ const OfferSliderComponent = (props: Props) => {
 
 
     }
-    const printCurrentSlide = (swiper: SwiperClass) => {
+    const printCurrentSlide = (swiper: SwiperCore) => {
         setCurrentSlide(swiper.realIndex + 1)
     }
 
