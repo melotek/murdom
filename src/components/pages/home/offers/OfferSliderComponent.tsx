@@ -4,7 +4,7 @@ import 'swiper/css';
 import "swiper/css/effect-fade";
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
-import { Swiper, SwiperSlide } from "swiper/react";
+import { Swiper, SwiperClass, SwiperSlide } from "swiper/react";
 
 import NavigateBeforeIcon from '@mui/icons-material/NavigateBefore';
 import NavigateNextIcon from '@mui/icons-material/NavigateNext';
@@ -68,8 +68,8 @@ const OfferSliderComponent = (props: Props) => {
 
 
     }
-    const printCurrentSlide = (e: any) => {
-        setCurrentSlide(e.realIndex + 1)
+    const printCurrentSlide = (swiper: SwiperClass) => {
+        setCurrentSlide(swiper.realIndex + 1)
     }
 
 
