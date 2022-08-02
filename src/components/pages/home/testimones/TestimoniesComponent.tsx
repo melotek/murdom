@@ -13,12 +13,12 @@ type Props = {}
 
 const TestimoniesComponent = (props: Props) => {
     const contentRef = useRef<SwiperCore>() as any;
-    const [swiper, setSwiper] = useState(null);
+    const [swiper, setSwiper] = useState<SwiperCore>();
     const [currentSlide, setCurrentSlide] = useState(1)
     const theme = useTheme()
 
-    const printCurrentSlide = (e) => {
-        setCurrentSlide(e.realIndex + 1)
+    const printCurrentSlide = (swiper) => {
+        setCurrentSlide(swiper.realIndex + 1)
     }
 
 
