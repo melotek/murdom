@@ -1,1 +1,2 @@
-export {default as NavBarComponent} from './NavBarComponent';
+export { default as NavBarComponent } from './NavBarComponent';
+

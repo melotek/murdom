@@ -1,1 +1,1 @@
-export { default as TestimoniesComponent } from "./TestimoniesComponent"
+export { default as TestimoniesComponent } from "./TestimoniesComponent";

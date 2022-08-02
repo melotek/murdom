@@ -1,1 +1,1 @@
-export {default as NextLink} from "./linkComponent"
+export { default as NextLink } from "./linkComponent";

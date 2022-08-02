@@ -1,7 +1,6 @@
-import { Box, Container, Divider, Paper, Typography, useMediaQuery, useTheme } from '@mui/material'
-import React, { useState } from 'react'
-import Image from "next/image"
 import ButtonContained from '@buttons/ButtonContained'
+import { Box, Container, Divider, Paper, Typography, useMediaQuery, useTheme } from '@mui/material'
+import Image from "next/image"
 
 type Props = {}
 

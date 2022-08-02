@@ -1,9 +1,4 @@
-import { Box, Icon, Theme, Typography, useMediaQuery, useTheme } from '@mui/material'
-import React from 'react'
-import SvgBathroom from 'src/UI/Bathroom'
-import SvgBedroom from "src/UI/Bedroom"
-import SvgGarage from 'src/UI/Garage'
-import SvgHouseDraw from 'src/UI/HouseDraw'
+import { Box, Theme, Typography, useMediaQuery, useTheme } from '@mui/material'
 type Props = {
     offers: {
         meters: number,

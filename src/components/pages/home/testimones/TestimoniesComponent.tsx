@@ -1,13 +1,13 @@
-import React, { useRef, useState } from 'react'
-import SwiperCore, { Autoplay, EffectFade, Navigation } from 'swiper'
-import { Swiper, SwiperSlide } from 'swiper/react'
-import content from "../../../../../data"
-import 'swiper/css/navigation';
-import 'swiper/css/pagination';
+import { Box, Container, Paper, Typography, useTheme } from '@mui/material';
+import Image from "next/image";
+import { useRef, useState } from 'react';
+import SwiperCore, { Autoplay, EffectFade, Navigation } from 'swiper';
 import 'swiper/css';
 import "swiper/css/effect-fade";
-import { Box, Container, Paper, Typography, useTheme } from '@mui/material';
-import Image from "next/image"
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import content from "../../../../../data";
 
 type Props = {}
 

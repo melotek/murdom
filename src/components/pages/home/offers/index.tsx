@@ -1,1 +1,1 @@
-export {default as OfferSliderComponent} from "./OfferSliderComponent"
+export { default as OfferSliderComponent } from "./OfferSliderComponent";

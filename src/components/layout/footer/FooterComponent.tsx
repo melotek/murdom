@@ -1,6 +1,4 @@
-import { useTheme } from '@mui/material'
-import { Container, Paper } from '@mui/material'
-import React from 'react'
+import { Container, Paper, useTheme } from '@mui/material'
 import { SvgLayer } from '.'
 
 type Props = {}
@@ -8,10 +6,10 @@ type Props = {}
 const FooterComponent = (props: Props) => {
 	const theme = useTheme()
 	return (
-		<Container> 
+		<Container>
 
-			<Paper elevation={0} sx={{background: theme.palette.primary.main}}  >
-				<SvgLayer/>
+			<Paper elevation={0} sx={{ background: theme.palette.primary.main }}  >
+				<SvgLayer />
 
 			</Paper >
 		</Container >

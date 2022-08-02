@@ -1,7 +1,6 @@
-import { Box, Container, Typography, useTheme } from '@mui/material'
-import React from 'react'
-import Image from "next/image"
 import LinkButtonContained from '@buttons/ButtonContained'
+import { Box, Container, Typography, useTheme } from '@mui/material'
+import Image from "next/image"
 type Props = {}
 
 const HeaderComponent = (props: Props) => {
@@ -16,15 +15,15 @@ const HeaderComponent = (props: Props) => {
             <Container maxWidth="lg" sx={{ marginTop: 8, marginBottom: 8, flexDirection: "column", display: "flex" }}>
                 <Typography gutterBottom component="h1" variant='body1' mb={4}>Osiedle "Zielone", Rąbień AB.</Typography>
 
-                <Typography 
-                fontFamily="Cormorant"
-                color={theme.palette.primary.main} gutterBottom component="h2" variant="h4" sx={{textTransform: "uppercase"}}fontWeight={500} mb={4} lineHeight={1.4} >Wybudowane z myślą o Twojej przyszłości.</Typography>
+                <Typography
+                    fontFamily="Cormorant"
+                    color={theme.palette.primary.main} gutterBottom component="h2" variant="h4" sx={{ textTransform: "uppercase" }} fontWeight={500} mb={4} lineHeight={1.4} >Wybudowane z myślą o Twojej przyszłości.</Typography>
                 <Typography gutterBottom component="p" mb={4}>        Nasze nieruchomości zaprojektowaliśmy tak, aby dawały ci dużo
                     przestrzeni i komfortu życiowego. Proste bryły niwelują utratę
                     energii w zimie, a malownicza zielona okolica rekompensuję każdą chwilę zpędzoną w zgiełku miasta.</Typography>
 
 
-            <LinkButtonContained disableRipple disableElevation sx={{width: 240, borderRadius: "0.1em"}} href="/domy-rabien-ab" children="Oferta"/>
+                <LinkButtonContained disableRipple disableElevation sx={{ width: 240, borderRadius: "0.1em" }} href="/domy-rabien-ab" children="Oferta" />
 
             </Container>
         </Box>

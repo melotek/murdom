@@ -1,18 +1,18 @@
-import React from 'react'
-import { NavBarComponent } from './navbar'
+import React from 'react';
 import FooterComponent from './footer/FooterComponent';
+import { NavBarComponent } from './navbar';
 
 type Props = {
-children: React.ReactNode
+	children: React.ReactNode
 
 }
 
-const Layout = ({children}: Props) => {
+const Layout = ({ children }: Props) => {
 	return (
 		<>
-		<NavBarComponent/>
-		{children}
-		<FooterComponent/>
+			<NavBarComponent />
+			{children}
+			<FooterComponent />
 		</>
 	)
 }

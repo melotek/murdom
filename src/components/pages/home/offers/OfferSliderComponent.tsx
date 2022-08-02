@@ -1,22 +1,21 @@
-import React, { MutableRefObject, useEffect, useRef, useState } from 'react'
-import { Swiper, SwiperSlide, useSwiper } from "swiper/react";
-import SwiperCore, { Pagination, Navigation, Autoplay, EffectFade } from "swiper";
-import 'swiper/css/navigation';
-import 'swiper/css/pagination';
+import { useRef, useState } from 'react';
+import SwiperCore, { Autoplay, EffectFade, Navigation } from "swiper";
 import 'swiper/css';
 import "swiper/css/effect-fade";
-import { filter } from "lodash";
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
+import { Swiper, SwiperSlide } from "swiper/react";
 
-import Image from "next/image"
 import NavigateBeforeIcon from '@mui/icons-material/NavigateBefore';
 import NavigateNextIcon from '@mui/icons-material/NavigateNext';
 import { Box, Container, Divider, Icon, IconButton, Typography, useTheme } from '@mui/material';
-import content from "../../../../../data"
-import SlideContentComponent from './SlideContentComponent';
-import SvgBedroom from 'src/UI/Bedroom';
-import SvgBathroom from 'src/UI/Bathroom';
-import SvgGarage from 'src/UI/Garage';
+import Image from "next/image";
 import { LinkButtonContained } from 'src/components/shared/buttons/';
+import SvgBathroom from 'src/UI/Bathroom';
+import SvgBedroom from 'src/UI/Bedroom';
+import SvgGarage from 'src/UI/Garage';
+import content from "../../../../../data";
+import SlideContentComponent from './SlideContentComponent';
 
 type Props = {}
 

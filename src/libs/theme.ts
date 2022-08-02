@@ -1,4 +1,4 @@
-import { PaletteMode, Theme } from '@mui/material';
+import { PaletteMode } from '@mui/material';
 
 // declare module '@mui/material/styles' {
 //   interface Theme {
@@ -23,7 +23,7 @@ import { PaletteMode, Theme } from '@mui/material';
 //     primery: string;
 //     secondary: string;
 //     black: string;
- 
+
 // } 
 
 // Create a theme instance.

@@ -1,1 +1,1 @@
-export {default as LinkButtonContained} from "./ButtonContained"
+export { default as LinkButtonContained } from "./ButtonContained";

@@ -1,15 +1,14 @@
-import * as React from 'react';
-import Head from 'next/head';
-import { AppProps } from 'next/app';
-import { ThemeProvider } from '@mui/material/styles';
-import CssBaseline from '@mui/material/CssBaseline';
 import { CacheProvider, EmotionCache } from '@emotion/react';
-import theme from '@libs/theme';
 import createEmotionCache from '@libs/createEmotionCache';
-import { createTheme, PaletteMode } from '@mui/material';
 import getDesignTokens from '@libs/theme';
+import { createTheme, PaletteMode } from '@mui/material';
+import CssBaseline from '@mui/material/CssBaseline';
+import { ThemeProvider } from '@mui/material/styles';
+import { AppProps } from 'next/app';
+import Head from 'next/head';
+import * as React from 'react';
 import Layout from 'src/components/layout';
-import "../src/styles/swiper.css"
+import "../src/styles/swiper.css";
 
 // Client-side cache, shared for the whole session of the user in the browser.
 const clientSideEmotionCache = createEmotionCache();

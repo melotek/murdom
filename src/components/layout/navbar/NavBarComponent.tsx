@@ -1,14 +1,13 @@
-import { Box, Container, ContainerProps, ListProps, BoxProps, easing, Link, List, ListItem, styled, useTheme, Slide, Typography } from '@mui/material'
-import React, { useEffect, useRef, useState } from 'react'
-import Image from "next/image"
+import FacebookIcon from '@mui/icons-material/Facebook'
+import InstagramIcon from '@mui/icons-material/Instagram'
+import LinkedInIcon from '@mui/icons-material/LinkedIn'
+import { Box, BoxProps, Container, ContainerProps, List, ListItem, Slide, styled, Typography, useTheme } from '@mui/material'
 import Hamburger from 'hamburger-react'
+import Image from "next/image"
+import { useRouter } from 'next/router'
+import React, { useEffect, useRef, useState } from 'react'
 import { NextLink } from 'src/components/shared/link'
 import content from "../../../../data"
-import { useRouter } from 'next/router'
-import FacebookIcon from '@mui/icons-material/Facebook';
-import InstagramIcon from '@mui/icons-material/Instagram';
-import LinkedInIcon from '@mui/icons-material/LinkedIn';
-import { Row } from '../row'
 type Props = {}
 
 
@@ -72,45 +71,45 @@ const NavBarComponent = (props: Props) => {
 	return (
 		<TopBarCustom isOpen={isOpen} >
 			<Box ref={topBarRef}>
-			
 
 
-					<Box py={2} justifyContent="space-between" alignItems="center" display="flex" >
-						<Image width={80} height={82} src="/Logo.png" />
-						<NextLink sx={{
-							display: "block",
-							position: "relative",
-							padding: " 0.15em 0",
-							textDecoration: "none",
+
+				<Box py={2} justifyContent="space-between" alignItems="center" display="flex" >
+					<Image width={80} height={82} src="/Logo.png" />
+					<NextLink sx={{
+						display: "block",
+						position: "relative",
+						padding: " 0.15em 0",
+						textDecoration: "none",
 
 
-							'&::before': {
-								content: '""',
-								position: "absolute",
-								// display:"none",
-								bottom: 0,
-								left: 0,
-								width: "100%",
-								height: "0.15em",
-								backgroundColor: theme.palette.text.primary,
-								opacity: 0,
-								transition: "opacity 300ms, transform 300ms"
-							},
+						'&::before': {
+							content: '""',
+							position: "absolute",
+							// display:"none",
+							bottom: 0,
+							left: 0,
+							width: "100%",
+							height: "0.15em",
+							backgroundColor: theme.palette.text.primary,
+							opacity: 0,
+							transition: "opacity 300ms, transform 300ms"
+						},
 
-							'&:hover::before': {
-								opacity: 1,
-								transform: "translate3d(0, 0.15em, 0)"
-							},
-							'&:focus::before': {
-								opacity: 1,
-								transform: "translate3d(0, 0.15em, 0)"
-							}
-						}} href="tel:+48 600 795 925" color={theme.palette.text.primary} >
-							<Typography variant="h6" component="p">+48 600 795 925</Typography>
-						</NextLink>
+						'&:hover::before': {
+							opacity: 1,
+							transform: "translate3d(0, 0.15em, 0)"
+						},
+						'&:focus::before': {
+							opacity: 1,
+							transform: "translate3d(0, 0.15em, 0)"
+						}
+					}} href="tel:+48 600 795 925" color={theme.palette.text.primary} >
+						<Typography variant="h6" component="p">+48 600 795 925</Typography>
+					</NextLink>
 
-						<Hamburger toggled={isOpen} toggle={setOpen} color={isOpen ? "#fff" : theme.palette.primary.main} />
-					</Box>	
+					<Hamburger toggled={isOpen} toggle={setOpen} color={isOpen ? "#fff" : theme.palette.primary.main} />
+				</Box>
 			</Box>
 			<ListCustom isOpen={isOpen} component="nav" sx={{ justifyContent: "center" }} >
 				<>
