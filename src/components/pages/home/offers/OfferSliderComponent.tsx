@@ -68,7 +68,7 @@ const OfferSliderComponent = (props: Props) => {
 
 
     }
-    const printCurrentSlide = (swiper) => {
+    const printCurrentSlide = (swiper: SwiperCore) => {
         setCurrentSlide(swiper.realIndex + 1)
     }
 

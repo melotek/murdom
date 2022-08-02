@@ -17,7 +17,7 @@ const TestimoniesComponent = (props: Props) => {
     const [currentSlide, setCurrentSlide] = useState(1)
     const theme = useTheme()
 
-    const printCurrentSlide = (swiper) => {
+    const printCurrentSlide = (swiper: SwiperCore) => {
         setCurrentSlide(swiper.realIndex + 1)
     }
 
