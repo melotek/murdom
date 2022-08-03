@@ -58,11 +58,11 @@ const content: Content = {
     {
       image: "/testimony1.jpg",
       name: "Maciej i Agnieszka",
-      content: "Możemy z całą odpowiedzialnością polecić Państwu firmę Murdom, w 2018 kupiliślmy mieszkanie w apartementowcu, deweloper dostosował nieruchomość do naszych indywidualnych potrzeb."
+      content: "Polecamy Państwu firmę Murdom, w 2018 roku kupiliślmy dom wolnostojący, deweloper dostosował nieruchomość do naszych indywidualnych potrzeb."
     },
     {
       image: "/testimony2.jpg",
-      name: "Robert i Izabela", content: "Jesteśmy bardzo zadowoleni, z jakości materiałów, oraz solidności budynku"
+      name: "Robert i Izabela", content: "Jesteśmy bardzo zadowoleni, z jakości materiałów, oraz solidności budynku."
     }
   ]
 };
