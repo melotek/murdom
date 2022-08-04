@@ -81,7 +81,7 @@ const NavBarComponent = (props: Props) => {
 						position: "relative",
 						padding: " 0.15em 0",
 						textDecoration: "none",
-
+						cursor: "pointer",
 
 						'&::before': {
 							content: '""',

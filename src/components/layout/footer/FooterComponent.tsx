@@ -21,11 +21,11 @@ const email: string = "murdom@vp.pl";
 
 const FooterRowComponent = ({ title, content, icon }: ContentRow) => {
 
-	return (<Box display="flex" flexDirection={icon ? "row" : "column"} mb={1.5}>
-		<Typography variant="body2" gutterBottom>{title}</Typography>
+	return (<Box display="flex" flexDirection="row">
+		{title && <Typography variant="body2" gutterBottom mr={1} my={.7} alignSelf="center" >{title}</Typography>}
 
-		{icon && <Box width={32} height={32} pr={1} >{icon}</Box>}
-		<Typography variant="body1" > {content} </Typography>
+		{icon && <Box width={32} height={32} my={.7} mr={1} alignSelf="center" >{icon}</Box>}
+		<Typography my={.7} variant="body1" > {content} </Typography>
 
 
 
@@ -40,64 +40,71 @@ const FooterComponent = () => {
 		<Container>
 			<Box sx={{ background: theme.palette.background.paper }} my={8}>
 
-				<Paper elevation={0} sx={{ background: theme.palette.primary.main, display: "flex", width: "calc(100vw / 2 - 4rem" }}
+				<Paper elevation={0} sx={{ background: theme.palette.primary.main, display: "flex" }}
 				>
-					<Box p={4}>
-						<Typography variant="h6">Firma</Typography>
-						<FooterRowComponent
-							// title="Nazwa firmy:"
-							content={nazwaFirmy}
-						/>
-						<FooterRowComponent
-							title="Numer NIP:"
-							content={numerNip}
-						/>
-						{/* <FooterRowComponent
+					<Box p={2}>
+						<Box my={2}>
+
+
+							<Typography variant="h6" mb={1}>Firma</Typography>
+							<FooterRowComponent
+								// title="Nazwa firmy:"
+								content={nazwaFirmy}
+							/>
+							<FooterRowComponent
+								title="Numer NIP:"
+								content={numerNip}
+							/>
+							{/* <FooterRowComponent
 							title="Numer Regon:"
 							content={numerRegon}
 						/> */}
-
-						<Typography variant="h6">Dane kontaktowe</Typography>
-						<Box pt={2}>
-
-
-							<a href={`tel:${numerTel}`} style={{ textDecoration: "none", color: theme.palette.text.primary, cursor: "pointer" }}>
-								<FooterRowComponent
-									icon={
-										<Box>
-
-											< SvgPhoneCallSvgrepoCom
-
-												fill={theme.palette.background.paper}
-												width={32}
-												height={32}
-											/>
-										</Box>
-
-									}
-									content={numerTel}
-								/></a>
 						</Box>
-						<Box pt={2}>
+						<Box my={2}>
 
 
-							<a href={`mailto:${email}`} style={{ textDecoration: "none", color: theme.palette.text.primary, cursor: "pointer" }}>
-								<FooterRowComponent
-									icon={
-										<Box>
+							<Typography variant="h6" mb={1}>Dane kontaktowe</Typography>
+							<Box >
 
-											< SvgMailSvgrepoCom
 
-												fill={theme.palette.background.paper}
-												width={32}
-												height={32}
-											/>
-										</Box>
+								<a href={`tel:${numerTel}`} style={{ textDecoration: "none", color: theme.palette.text.primary, cursor: "pointer" }}>
+									<FooterRowComponent
+										icon={
+											<Box sx={{ width: 24, height: 24 }}>
 
-									}
-									content={email}
-								/>
-							</a>
+												< SvgPhoneCallSvgrepoCom
+
+													fill={theme.palette.background.paper}
+													width={32}
+													height={32}
+												/>
+											</Box>
+
+										}
+										content={numerTel}
+									/></a>
+							</Box>
+							<Box>
+
+
+								<a href={`mailto:${email}`} style={{ textDecoration: "none", color: theme.palette.text.primary, cursor: "pointer" }}>
+									<FooterRowComponent
+										icon={
+											<Box sx={{ width: 24, height: 24 }}>
+
+												< SvgMailSvgrepoCom
+
+													fill={theme.palette.background.paper}
+													width={32}
+													height={32}
+												/>
+											</Box>
+
+										}
+										content={email}
+									/>
+								</a>
+							</Box>
 						</Box>
 					</Box>
 				</Paper >
