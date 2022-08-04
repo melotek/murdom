@@ -93,7 +93,7 @@ const TestimoniesComponent = (props: Props) => {
                                     }
                                 }} >
 
-                                    <Typography component="em" lineHeight={2.4} sx={{ alignSelf: "center" }}>
+                                    <Typography component="em" lineHeight={2.4} sx={{ alignSelf: "center", marginRight: 2 }}>
                                         <span >  <SvgQuote fill={theme.palette.primary.main} />
                                             <SvgQuote fill={theme.palette.primary.main} /></span>   {_.content}
                                         <span style={{ position: "absolute", marginLeft: theme.spacing(2) }}>  <SvgQuote fill={theme.palette.primary.main} />

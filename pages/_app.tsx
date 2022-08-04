@@ -19,7 +19,7 @@ interface MyAppProps extends AppProps {
 
 export default function MyApp(props: MyAppProps) {
 
-  const [mode, setMode] = React.useState<PaletteMode>('dark');
+  const [mode, setMode] = React.useState<PaletteMode>('light');
   // const colorMode = React.useMemo(
   //   () => ({
   //     // The dark mode switch would invoke this method
@@ -33,6 +33,7 @@ export default function MyApp(props: MyAppProps) {
   // );
 
   const theme = React.useMemo(() => createTheme(getDesignTokens(mode)), [mode]);
+
 
 
 

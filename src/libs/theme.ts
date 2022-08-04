@@ -27,6 +27,9 @@ import { PaletteMode } from '@mui/material';
 // } 
 
 // Create a theme instance.
+
+
+
 const getDesignTokens = (mode: PaletteMode) => ({
 
   duration: {
@@ -44,24 +47,58 @@ const getDesignTokens = (mode: PaletteMode) => ({
   },
   palette: {
     mode: mode,
+
+
+    ...(mode === 'light'
+      ? {
+        primary: { main: 'hsl(37, 52%, 58%)' },
+        secondary: { main: 'hsla(37, 52%, 58%, .7)' },
+        background: {
+          default: 'hsl(37, 50%, 95%)',
+          paper: 'hsl(37, 50%, 95%)',
+
+        },
+        common: {
+          white: "#fff",
+          blue: "#181d24"
+        },
+        success: {
+          main: "#020202"
+        },
+        text: {
+          primary: 'hsl(0, 2%, 8%)',
+          secondary: '#fff',
+          // black: "#020202"
+        },
+      } : {
+        primary: { main: 'hsl(37, 52%, 58%)' },
+        secondary: { main: 'hsla(37, 52%, 58%, .7)' },
+        background: {
+          default: 'hsl(0, 2%, 8%)',
+          paper: 'hsl(37, 50%, 95%)',
+        },
+        common: {
+          white: "#fff",
+          blue: "#fff"
+        },
+        success: {
+          main: "#020202"
+        },
+        text: {
+          primary: '#fff',
+          secondary: 'hsl(0, 2%, 8%)',
+          // black: "#020202"
+        },
+
+      })
+
     // palette values for light mode
-    primary: { main: 'hsl(37, 52%, 58%)' },
-    secondary: { main: 'hsla(37, 52%, 58%, .7)' },
-    background: {
-      default: mode === 'dark' ? 'hsl(0, 2%, 8%)' : 'hsl(30, 40%, 98%)',
-      paper: 'dark' ? 'hsl(30, 40%, 98%)' : 'hsl(0, 2%, 8%)',
-    },
-    success: {
-      main: "#020202"
-    },
-    text: {
-      secondary: 'hsl(38, 35%, 46%)',
-      primary: 'dark' ? '#fff' : 'hsl(0, 2%, 8%)',
-      // black: "#020202"
-    },
+
   },
   typography: {
+    fontSize: 12,
     fontFamily: ['Montserrat', 'Cormorant'].join(','),
+
   },
   components: {
     MuiButton: {

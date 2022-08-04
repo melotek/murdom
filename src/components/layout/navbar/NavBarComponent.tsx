@@ -91,7 +91,7 @@ const NavBarComponent = (props: Props) => {
 							left: 0,
 							width: "100%",
 							height: "0.15em",
-							backgroundColor: theme.palette.text.primary,
+							backgroundColor: theme.palette.common.white,
 							opacity: 0,
 							transition: "opacity 300ms, transform 300ms"
 						},
@@ -104,7 +104,7 @@ const NavBarComponent = (props: Props) => {
 							opacity: 1,
 							transform: "translate3d(0, 0.15em, 0)"
 						}
-					}} href="tel:+48 600 795 925" color={theme.palette.text.primary} >
+					}} href="tel:+48 600 795 925" color={isOpen ? "#fff" : theme.palette.primary.main} >
 						<Typography variant="h6" component="p">+48 600 795 925</Typography>
 					</NextLink>
 
@@ -139,7 +139,7 @@ const NavBarComponent = (props: Props) => {
 												left: 0,
 												width: "100%",
 												height: "0.15em",
-												backgroundColor: theme.palette.text.primary,
+												backgroundColor: theme.palette.common.white,
 												opacity: router.asPath === _.href ? 1 : 0,
 												transition: "opacity 300ms, transform 300ms"
 											},
@@ -154,7 +154,7 @@ const NavBarComponent = (props: Props) => {
 												transform: "translate3d(0, 0.15em, 0)"
 											}
 										}}
-										color={theme.palette.text.primary} href={_.href}>{_.text.toUpperCase()}</NextLink>
+										color={theme.palette.common.white} href={_.href}>{_.text.toUpperCase()}</NextLink>
 								</ListItem>
 							)}
 						</List>
@@ -166,10 +166,10 @@ const NavBarComponent = (props: Props) => {
 
 						<List sx={{ display: "flex", width: 200, paddingTop: 7, margin: "auto" }}>
 							<ListItem><NextLink href="facebook.com">
-								<FacebookIcon sx={{ fill: theme.palette.text.primary }} />
+								<FacebookIcon sx={{ fill: theme.palette.common.white }} />
 							</NextLink></ListItem>
-							<ListItem><NextLink href="linkendin.com" ><LinkedInIcon sx={{ fill: theme.palette.text.primary }} /></NextLink></ListItem>
-							<ListItem><NextLink href="instagram.com"><InstagramIcon sx={{ fill: theme.palette.text.primary }} /></NextLink></ListItem>
+							<ListItem><NextLink href="linkendin.com" ><LinkedInIcon sx={{ fill: theme.palette.common.white }} /></NextLink></ListItem>
+							<ListItem><NextLink href="instagram.com"><InstagramIcon sx={{ fill: theme.palette.common.white }} /></NextLink></ListItem>
 						</List>
 					</Slide></>
 

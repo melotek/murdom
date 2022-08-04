@@ -5,6 +5,8 @@ type Props = {}
 
 const HeaderComponent = (props: Props) => {
     const theme = useTheme();
+
+
     return (
         <Box  >
             <Image style={{
@@ -18,7 +20,7 @@ const HeaderComponent = (props: Props) => {
                 <Typography
                     fontFamily="Cormorant"
                     color={theme.palette.primary.main} gutterBottom component="h2" variant="h4" sx={{ textTransform: "uppercase" }} fontWeight={500} mb={4} lineHeight={1.4} >Wybudowane z myślą o Twojej przyszłości.</Typography>
-                <Typography gutterBottom component="p" mb={4}>        Nasze nieruchomości zaprojektowaliśmy tak, aby dawały ci dużo
+                <Typography gutterBottom component="p" mb={4} color={theme.palette.text.primary}>        Nasze nieruchomości zaprojektowaliśmy tak, aby dawały ci dużo
                     przestrzeni i komfortu życiowego. Proste bryły niwelują utratę
                     energii w zimie, a malownicza zielona okolica rekompensuję każdą chwilę zpędzoną w zgiełku miasta.</Typography>
 

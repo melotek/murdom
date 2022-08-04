@@ -56,6 +56,10 @@ const OfferSliderComponent = (props: Props) => {
     const theme = useTheme()
     const { offers } = content
 
+    const links = [{ type: "1" }, { type: "2" }, { type: "3" }, { type: "4" }]
+    const [link, setCurrentLink] = useState(offers[0].type)
+
+
     const handleNext = () => {
         swiperRef!.current.swiper.slideNext()
         contentRef!.current.swiper.slideNext()
@@ -70,6 +74,7 @@ const OfferSliderComponent = (props: Props) => {
     }
     const printCurrentSlide = (swiper: SwiperCore) => {
         setCurrentSlide(swiper.realIndex + 1)
+        setCurrentLink(offers[swiper.realIndex].type)
     }
 
 
@@ -154,7 +159,7 @@ const OfferSliderComponent = (props: Props) => {
                         )
                         )}
                     </Swiper>
-                    <LinkButtonContained disableRipple disableElevation sx={{ width: "100vw", borderRadius: "0.1em", }} href="/inwestycje" children="nieruchomości" fullWidth={true} />
+                    <LinkButtonContained disableRipple disableElevation sx={{ width: "100vw", borderRadius: "0.1em", }} href={`/domy/${link}`} children="nieruchomości" fullWidth={true} />
                 </div>
             </Box>
             <Divider sx={{ marginBottom: .5 }} />

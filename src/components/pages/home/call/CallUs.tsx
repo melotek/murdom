@@ -24,7 +24,7 @@ const CallUsComponent = () => {
             <Box mb={4}>
 
 
-              <Typography color={theme.palette.text.secondary} sx={{ textTransform: "uppercase" }} fontWeight={500} fontFamily="Cormorant" variant="h5" component="h2" mb={4}>
+              <Typography color={theme.palette.primary.main} sx={{ textTransform: "uppercase" }} fontWeight={500} fontFamily="Cormorant" variant="h5" component="h2" mb={4} >
                 Nasze domy i mieszkania kupiło dotychczas, dziesiątki zadowolonych właścicieli.
               </Typography>
               <Typography component="em" pb={2} color={theme.palette.success.main}>
@@ -32,7 +32,7 @@ const CallUsComponent = () => {
 
                   "Dziękujemy, że zainwestowali Państwo w leśne osiedle Rąbień AB."
                 </span>
-                <span style={{ color: theme.palette.text.secondary, textTransform: "uppercase" }}>
+                <span style={{ color: theme.palette.primary.main, textTransform: "uppercase" }}>
                   - Murdom
                 </span>
               </Typography>

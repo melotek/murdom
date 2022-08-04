@@ -20,12 +20,12 @@ const nazwaFirmy: string = "Sylwester Krzyżostaniak - Przedsiębiorstwo Budowla
 const email: string = "murdom@vp.pl";
 
 const FooterRowComponent = ({ title, content, icon }: ContentRow) => {
-
+	const theme = useTheme()
 	return (<Box display="flex" flexDirection="row">
-		{title && <Typography variant="body2" gutterBottom mr={1} my={.7} alignSelf="center" >{title}</Typography>}
+		{title && <Typography variant="body2" gutterBottom mr={1} my={.7} alignSelf="center" color={theme.palette.common.white}>{title}</Typography>}
 
 		{icon && <Box width={32} height={32} my={.7} mr={1} alignSelf="center" >{icon}</Box>}
-		<Typography my={.7} variant="body1" > {content} </Typography>
+		<Typography my={.7} variant="body1" color={theme.palette.common.white}> {content} </Typography>
 
 
 
@@ -38,7 +38,7 @@ const FooterComponent = () => {
 	const theme = useTheme()
 	return (
 		<Container>
-			<Box sx={{ background: theme.palette.background.paper }} my={8}>
+			<Box sx={{ background: theme.palette.background.paper, }} my={8}>
 
 				<Paper elevation={0} sx={{ background: theme.palette.primary.main, display: "flex" }}
 				>
@@ -46,7 +46,7 @@ const FooterComponent = () => {
 						<Box my={2}>
 
 
-							<Typography variant="h6" mb={1}>Firma</Typography>
+							<Typography variant="h6" mb={1} color={theme.palette.common.white}>Firma</Typography>
 							<FooterRowComponent
 								// title="Nazwa firmy:"
 								content={nazwaFirmy}
@@ -63,18 +63,18 @@ const FooterComponent = () => {
 						<Box my={2}>
 
 
-							<Typography variant="h6" mb={1}>Dane kontaktowe</Typography>
+							<Typography variant="h6" mb={1} color={theme.palette.common.white}>Dane kontaktowe</Typography>
 							<Box >
 
 
-								<a href={`tel:${numerTel}`} style={{ textDecoration: "none", color: theme.palette.text.primary, cursor: "pointer" }}>
+								<a href={`tel:${numerTel}`} style={{ textDecoration: "none", color: theme.palette.common.white, cursor: "pointer" }}>
 									<FooterRowComponent
 										icon={
 											<Box sx={{ width: 24, height: 24 }}>
 
 												< SvgPhoneCallSvgrepoCom
 
-													fill={theme.palette.background.paper}
+													fill={theme.palette.common.white}
 													width={32}
 													height={32}
 												/>
@@ -87,14 +87,14 @@ const FooterComponent = () => {
 							<Box>
 
 
-								<a href={`mailto:${email}`} style={{ textDecoration: "none", color: theme.palette.text.primary, cursor: "pointer" }}>
+								<a href={`mailto:${email}`} style={{ textDecoration: "none", color: theme.palette.common.white, cursor: "pointer" }}>
 									<FooterRowComponent
 										icon={
 											<Box sx={{ width: 24, height: 24 }}>
 
 												< SvgMailSvgrepoCom
 
-													fill={theme.palette.background.paper}
+													fill={theme.palette.common.white}
 													width={32}
 													height={32}
 												/>
