@@ -3,7 +3,7 @@ export type Offers = {
   meters: number,
   livingmeters: number, groundmeters: number, floors: number, underground: boolean, garage: boolean, carplaces: number, attic: boolean, bathrooms: number, rooms: number, heat: string,
   livingspace: number,
-  title: string, type: string, description: string, carplacesDescription: string,
+  title: string, type: string, description: string, carplacesDescription: string, kind: string
 }
 
 export type Testimony = {
@@ -44,22 +44,26 @@ const content: Content = {
     {
       title: "Dwieście sześćdziesiąt", type: "260 metrow kadratowych",
       image: "/IMG-20220629-WA0004.jpg",
-      meters: 260, livingmeters: 220, groundmeters: 5, floors: 2, underground: true, heat: "Gazowe", garage: true, carplaces: 2, carplacesDescription: "dwustanowiskowy", attic: true, bathrooms: 2, rooms: 5, livingspace: 100, description: "Największy z naszych oferowanych domów, posiada również duży ogródek, stan realizacji surowy, możemy jeszcze na życzenie zmodyfikować układ ścian działowych."
+      meters: 260, livingmeters: 220, groundmeters: 5, floors: 2, underground: true, heat: "Gazowe", garage: true, carplaces: 2, carplacesDescription: "dwustanowiskowy", attic: true, bathrooms: 2, rooms: 5, livingspace: 100, description: "Największy z naszych oferowanych domów, posiada również duży ogródek, stan realizacji surowy, możemy jeszcze na życzenie zmodyfikować układ ścian działowych.",
+      kind: "Dom wolnostojący"
     },
     {
       title: "Dwieście czterdzieści", type: "240 metrow kadratowych",
       image: "/IMG-20220629-WA0017.jpg",
-      meters: 240, livingmeters: 190, groundmeters: 5, floors: 2, underground: true, heat: "Gazowe", garage: true, carplaces: 1, carplacesDescription: "jednostanowiskowy", attic: true, bathrooms: 2, rooms: 5, livingspace: 100, description: "Największy z naszych oferowanych domów, posiada również duży ogródek, stan realizacji surowy, możemy jeszcze na życzenie zmodyfikować układ ścian działowych."
+      meters: 240, livingmeters: 190, groundmeters: 5, floors: 2, underground: true, heat: "Gazowe", garage: true, carplaces: 1, carplacesDescription: "jednostanowiskowy", attic: true, bathrooms: 2, rooms: 5, livingspace: 100, description: "Największy z naszych oferowanych domów, posiada również duży ogródek, stan realizacji surowy, możemy jeszcze na życzenie zmodyfikować układ ścian działowych.",
+      kind: "Dom wolnostojący"
     },
     {
       title: "Dwieście dwadzieścia", type: "220 metrow kadratowych",
       image: "/IMG-20220629-WA0026.jpg",
-      meters: 220, livingmeters: 200, groundmeters: 4, floors: 2, underground: true, heat: "Gazowe", garage: true, carplaces: 1, carplacesDescription: "jednostanowiskowy", attic: true, bathrooms: 2, rooms: 5, livingspace: 100, description: "Największy z naszych oferowanych domów, posiada również duży ogródek, stan realizacji surowy, możemy jeszcze na życzenie zmodyfikować układ ścian działowych."
+      meters: 220, livingmeters: 200, groundmeters: 4, floors: 2, underground: true, heat: "Gazowe", garage: true, carplaces: 1, carplacesDescription: "jednostanowiskowy", attic: true, bathrooms: 2, rooms: 5, livingspace: 100, description: "Największy z naszych oferowanych domów, posiada również duży ogródek, stan realizacji surowy, możemy jeszcze na życzenie zmodyfikować układ ścian działowych.",
+      kind: "Dom wolnostojący"
     },
     {
 
       title: "Dwieście", type: "200 metrow kadratowych",
-      image: "/IMG-20220629-WA0028.jpg", meters: 200, livingmeters: 180, groundmeters: 4, floors: 2, underground: true, heat: "Gazowe", garage: true, carplaces: 1, carplacesDescription: "jednostanowiskowy", attic: true, bathrooms: 2, rooms: 5, livingspace: 100, description: "Największy z naszych oferowanych domów, posiada również duży ogródek, stan realizacji surowy, możemy jeszcze na życzenie zmodyfikować układ ścian działowych."
+      image: "/IMG-20220629-WA0028.jpg", meters: 200, livingmeters: 180, groundmeters: 4, floors: 2, underground: true, heat: "Gazowe", garage: true, carplaces: 1, carplacesDescription: "jednostanowiskowy", attic: true, bathrooms: 2, rooms: 5, livingspace: 100, description: "Największy z naszych oferowanych domów, posiada również duży ogródek, stan realizacji surowy, możemy jeszcze na życzenie zmodyfikować układ ścian działowych.",
+      kind: "Dom wolnostojący"
     }
   ],
   testimonies: [

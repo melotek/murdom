@@ -5,7 +5,7 @@ import { PaletteMode } from '@mui/material';
 //     text: {
 //       primery: string;
 //       secondary: string;
-//       black: string;
+//       grey: string;
 //     };
 //   }
 //   // allow configuration using `createTheme`
@@ -13,18 +13,18 @@ import { PaletteMode } from '@mui/material';
 //     text: {
 //       primery: string;
 //       secondary: string;
-//       black: string;
+//       grey: string;
 //     };
 //   }
 // }
 
 // type Typetext = {
 
-//     primery: string;
-//     secondary: string;
-//     black: string;
+//   primery: string;
+//   secondary: string;
+//   grey: string;
 
-// } 
+// }
 
 // Create a theme instance.
 
@@ -51,7 +51,10 @@ const getDesignTokens = (mode: PaletteMode) => ({
 
     ...(mode === 'light'
       ? {
-        primary: { main: 'hsl(37, 52%, 58%)' },
+        primary: {
+          main: 'hsl(37, 52%, 58%)', dark: "#181d24",
+          contrastText: "hsl(60, 2%, 60%)",
+        },
         secondary: { main: 'hsla(37, 52%, 58%, .7)' },
         background: {
           default: 'hsl(37, 50%, 95%)',
@@ -65,18 +68,22 @@ const getDesignTokens = (mode: PaletteMode) => ({
         success: {
           main: "#020202"
         },
+
         text: {
           primary: 'hsl(0, 2%, 8%)',
           secondary: '#fff',
+
           // black: "#020202"
         },
       } : {
-        primary: { main: 'hsl(37, 52%, 58%)' },
+        primary: { main: 'hsl(37, 52%, 58%)', dark: "#181d24", contrastText: "hsl(60, 2%, 60%)", },
         secondary: { main: 'hsla(37, 52%, 58%, .7)' },
         background: {
           default: 'hsl(0, 2%, 8%)',
           paper: 'hsl(37, 50%, 95%)',
         },
+
+
         common: {
           white: "#fff",
           blue: "#fff"
@@ -87,6 +94,7 @@ const getDesignTokens = (mode: PaletteMode) => ({
         text: {
           primary: '#fff',
           secondary: 'hsl(0, 2%, 8%)',
+
           // black: "#020202"
         },
 

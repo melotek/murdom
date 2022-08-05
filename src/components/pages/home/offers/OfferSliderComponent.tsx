@@ -86,13 +86,13 @@ const OfferSliderComponent = (props: Props) => {
                         <Divider sx={{ marginBottom: .5 }} />
                         <Box display="flex" sx={{ justifyContent: "space-between" }}>
                             <Box sx={{ alignSelf: "center" }} display="flex">
-                                <Typography variant="body1" color={theme.palette.text.secondary} >
+                                <Typography variant="body1" color={theme.palette.primary.main} >
                                     {currentSlide}
                                 </Typography>
-                                <Typography variant="body1" color={theme.palette.text.secondary} sx={{ paddingLeft: 1, paddingRight: 1 }}>
+                                <Typography variant="body1" color={theme.palette.primary.main} sx={{ paddingLeft: 1, paddingRight: 1 }}>
                                     /
                                 </Typography>
-                                <Typography variant="body1" color={theme.palette.text.secondary} >
+                                <Typography variant="body1" color={theme.palette.primary.main} >
                                     4
                                 </Typography>
                             </Box>
@@ -118,8 +118,9 @@ const OfferSliderComponent = (props: Props) => {
                         }}
                         onSlideChange={printCurrentSlide}
                         autoplay={{
-                            delay: 3000
+                            delay: 4000
                         }}
+                        speed={1100}
                         loop={true}
                         modules={[Navigation, Autoplay]}
                         className="mySwiper"
@@ -139,8 +140,9 @@ const OfferSliderComponent = (props: Props) => {
                         slidesPerView={1}
                         spaceBetween={30}
                         effect={"fade"}
+                        speed={1100}
                         autoplay={{
-                            delay: 3000
+                            delay: 4000
                         }}
                         modules={[Navigation, EffectFade, Autoplay]}
                         loop={true}
