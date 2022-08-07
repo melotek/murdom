@@ -1,3 +1,4 @@
+import NavBarComponent from '@navbar/NavBarComponent'
 import { NextPage } from 'next/types'
 import { CallUsComponent } from 'src/components/pages/home/call'
 import { HeaderComponent } from 'src/components/pages/home/header'
@@ -7,23 +8,23 @@ import { TestimoniesComponent } from 'src/components/pages/home/testimones'
 type Props = {}
 
 const Home: NextPage = (props: Props) => {
-	return (
-		<>
-			<header>
-				<HeaderComponent />
-			</header>
-			<section>
-				<OfferSliderComponent />
-			</section>
-			<section>
-				<CallUsComponent />
-			</section>
-			<section>
-				<TestimoniesComponent />
-			</section>
-
-		</>
-	)
+  return (
+    <>
+      <header>
+        <NavBarComponent />
+        <HeaderComponent />
+      </header>
+      <section>
+        <OfferSliderComponent />
+      </section>
+      <section>
+        <CallUsComponent />
+      </section>
+      <section>
+        <TestimoniesComponent />
+      </section>
+    </>
+  )
 }
 
 export default Home

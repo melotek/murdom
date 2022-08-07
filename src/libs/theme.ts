@@ -1,4 +1,4 @@
-import { PaletteMode } from '@mui/material';
+import { PaletteMode } from '@mui/material'
 
 // declare module '@mui/material/styles' {
 //   interface Theme {
@@ -28,10 +28,7 @@ import { PaletteMode } from '@mui/material';
 
 // Create a theme instance.
 
-
-
 const getDesignTokens = (mode: PaletteMode) => ({
-
   duration: {
     shortest: 150,
     shorter: 200,
@@ -48,65 +45,65 @@ const getDesignTokens = (mode: PaletteMode) => ({
   palette: {
     mode: mode,
 
-
     ...(mode === 'light'
       ? {
-        primary: {
-          main: 'hsl(37, 52%, 58%)', dark: "#181d24",
-          contrastText: "hsl(60, 2%, 60%)",
-        },
-        secondary: { main: 'hsla(37, 52%, 58%, .7)' },
-        background: {
-          default: 'hsl(37, 50%, 95%)',
-          paper: 'hsl(37, 50%, 95%)',
+          primary: {
+            main: 'hsl(37, 52%, 58%)',
+            dark: '#181d24',
+            contrastText: 'hsl(60, 2%, 60%)',
+          },
+          secondary: { main: 'hsla(37, 52%, 58%, .7)' },
+          background: {
+            default: 'hsl(37, 50%, 95%)',
+            paper: 'hsl(37, 50%, 95%)',
+          },
+          common: {
+            white: '#fff',
+            blue: 'hsl(215, 20%, 12%)',
+          },
+          success: {
+            main: '#020202',
+          },
 
-        },
-        common: {
-          white: "#fff",
-          blue: "#181d24"
-        },
-        success: {
-          main: "#020202"
-        },
+          text: {
+            primary: 'hsl(0, 2%, 8%)',
+            secondary: '#fff',
 
-        text: {
-          primary: 'hsl(0, 2%, 8%)',
-          secondary: '#fff',
+            // black: "#020202"
+          },
+        }
+      : {
+          primary: {
+            main: 'hsl(37, 52%, 58%)',
+            dark: '#181d24',
+            contrastText: 'hsl(60, 2%, 60%)',
+          },
+          secondary: { main: 'hsla(37, 52%, 58%, .7)' },
+          background: {
+            default: 'hsl(0, 2%, 8%)',
+            paper: 'hsl(37, 50%, 95%)',
+          },
 
-          // black: "#020202"
-        },
-      } : {
-        primary: { main: 'hsl(37, 52%, 58%)', dark: "#181d24", contrastText: "hsl(60, 2%, 60%)", },
-        secondary: { main: 'hsla(37, 52%, 58%, .7)' },
-        background: {
-          default: 'hsl(0, 2%, 8%)',
-          paper: 'hsl(37, 50%, 95%)',
-        },
+          common: {
+            white: '#fff',
+            blue: 'hsl(215, 20%, 12%)',
+          },
+          success: {
+            main: '#020202',
+          },
+          text: {
+            primary: '#fff',
+            secondary: 'hsl(0, 2%, 8%)',
 
-
-        common: {
-          white: "#fff",
-          blue: "#fff"
-        },
-        success: {
-          main: "#020202"
-        },
-        text: {
-          primary: '#fff',
-          secondary: 'hsl(0, 2%, 8%)',
-
-          // black: "#020202"
-        },
-
-      })
+            // black: "#020202"
+          },
+        }),
 
     // palette values for light mode
-
   },
   typography: {
     fontSize: 12,
     fontFamily: ['Montserrat', 'Cormorant'].join(','),
-
   },
   components: {
     MuiButton: {
@@ -117,5 +114,5 @@ const getDesignTokens = (mode: PaletteMode) => ({
       },
     },
   },
-});
-export default getDesignTokens;
+})
+export default getDesignTokens

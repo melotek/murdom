@@ -68,6 +68,17 @@ const HeaderComponent = ({ data }: Props) => {
                 </Box>
 
                 <Image layout="responsive" height={150} width={200} src={content.image} />
+
+
+
+            </Box>
+            <Box my={8}>
+                <Typography variant="h4" textAlign="center">
+
+                    <span style={{ color: theme.palette.common.blue }}>Za</span>
+                    <span style={{ color: theme.palette.primary.main }}>lety</span>
+
+                </Typography>
             </Box>
 
         </>
