@@ -12,9 +12,11 @@ import {
   Box,
   Container,
   Divider,
+  Fade,
   Grid,
   Icon,
   IconButton,
+  Slide,
   Typography,
   useMediaQuery,
   useTheme,
@@ -25,207 +27,128 @@ import SvgBathroom from 'src/UI/Bathroom'
 import SvgBedroom from 'src/UI/Bedroom'
 import SvgGarage from 'src/UI/Garage'
 import content from '../../../../../data'
-import SlideContentComponent from './SlideContentComponent'
+import SlideContentComponent, { RowIconsComponent } from './SlideContentComponent'
+import React from 'react'
+import { delay } from 'lodash'
+import { ArrowRight } from 'src/UI/ArrowRight'
 
 type Props = {}
 
 function MobileOffers({ offers }: any) {
   const theme = useTheme()
+	const [active, setActive] = useState<number>(-1)
 
-  const imageRef = useRef<any | null>(null!)
-  const [ContentinView, setContentInView] = useState(false)
-  const [loaded, setLoaded] = useState(false)
-  const ref = useRef<HTMLDivElement>(null)
-  useEffect(() => {
-    if (
-      (ref.current?.firstChild?.firstChild as HTMLImageElement | undefined)
-        ?.complete
-    ) {
-      setLoaded(true)
-    }
-  }, [])
-  const ContentIsInView = () => {
-    if (!ref.current) {
-      return
-    } else {
-      const rect = ref.current.getBoundingClientRect()
-      return (
-        rect.top - rect.height / 2 <= rect.height &&
-        rect.bottom >= rect.height / 2
-      )
-    }
-  }
 
-  const ContentscrollHandler = () => {
-    setContentInView(ContentIsInView())
-  }
+	const containerRef = useRef(null)
 
-  useEffect(() => {
-    setContentInView(ContentIsInView())
+	
 
-    window.addEventListener('scroll', ContentscrollHandler)
-    return () => {
-      window.removeEventListener('scroll', ContentscrollHandler)
-    }
-  }, [])
+
 
   return (
-    <Box sx={{ width: '100%' }}>
-      <Grid container rowSpacing={0} columnSpacing={0}>
-        {offers.map((_: any, index: any) => {
+    <Box sx={{ width: '100%'}}>
+      <Grid container rowSpacing={0} columnSpacing={0} component="ul" sx={{padding: 0 }}>
+        {offers.map((_: any, index: number) => {
           return (
-            <Grid item xs={6} sx={{ position: 'relative' }}>
+            <Grid component="li" xs={6} sx={{ position: 'relative', }}
+					
+						onMouseOver={		() => setActive(index)}
+						onMouseLeave={	() =>	setActive(-1)}
+						>
               <Grid
+								ref={containerRef}
                 container
                 direction="column"
                 justifyContent="space-between"
                 alignItems="center"
                 height="100%"
-                sx={{ position: 'absolute', zIndex: 1000 }}
+								xs={12}
+                sx={{ position: 'absolute', zIndex: 1000, cursor: "pointer" }}
               >
-                <Grid xs={5} item>
+                <Grid  xs={1} item>
                   <Typography
                     fontFamily="Cormorant"
                     variant="h1"
                     component="h3"
                     alignSelf="center"
-                    color="white"
-                    sx={{ fontStyle: 'italic' }}
+                    
+										color={active > -1 && index === active ? theme.palette.common.blue : "white"}
+                    sx={{ fontStyle: 'italic', transform: "scaleY(1.35)",	transition: "color .2s ease-in" }}
                   >
                     0{index + 1}
                   </Typography>
                 </Grid>
-                <Grid pb={2} xs={1} item>
+                <Grid sx={{display: "flex", 			transitionProperty: "all",
+								transitionTimingFunction:"ease-in",
+								transitionDuration: ".2s",}}  
+								xs={active > -1 && index === active ? 2 : 4} item>
                   <Typography
                     fontFamily="Cormorant"
                     variant="h3"
                     component="h4"
+										fontWeight={900}
+										// fontWeight={active > -1 && index === active ? 700 : 700}
                     alignSelf="center"
-                    color="white"
-                    sx={{ fontStyle: 'italic' }}
+										color={active > -1 && index === active ? theme.palette.common.blue : "white"}
+                    sx={{ fontStyle: 'italic',	transform: "scaleY(1.35)",	transition: "color .2s ease-in" }}
                   >
                     {_.title} metrów.
                   </Typography>
                 </Grid>
-                <Grid xs={3} item container>
-                  <Grid item xs={4} display="flex" justifyContent={'center'}>
-                    <Icon
-                      sx={{
-                        width: '3em',
-                        height: '3em',
-                        padding: 0.5,
-                        lineHeight: '1em',
-                      }}
-                    >
-                      <SvgBedroom color={theme.palette.common.white} />
-                    </Icon>
-                    <Typography
-                      fontFamily="Cormorant"
-                      variant="h4"
-                      alignSelf="center"
-                      component="h4"
-                      color="white"
-                      sx={{ fontStyle: 'italic' }}
-                      mx={2}
-                    >
-                      &#10006;
-                    </Typography>
-                    <Typography
-                      fontFamily="Cormorant"
-                      variant="h2"
-                      component="h4"
-                      color="white"
-                      sx={{ fontStyle: 'italic' }}
-                    >
-                      {_.rooms}
-                    </Typography>
-                  </Grid>
-                  <Grid item xs={2} display="flex" justifyContent={'center'}>
-                    <Icon
-                      sx={{
-                        width: '3em',
-                        height: '3em',
-                        padding: 0.5,
-                        lineHeight: '1em',
-                      }}
-                    >
-                      <SvgBathroom color={theme.palette.common.white} />{' '}
-                    </Icon>
-                    <Typography
-                      fontFamily="Cormorant"
-                      variant="h4"
-                      alignSelf="center"
-                      component="h4"
-                      color="white"
-                      sx={{ fontStyle: 'italic' }}
-                      mx={2}
-                    >
-                      &#10006;
-                    </Typography>
-                    <Typography
-                      fontFamily="Cormorant"
-                      variant="h2"
-                      alignSelf="center"
-                      component="h4"
-                      color="white"
-                      sx={{ fontStyle: 'italic' }}
-                    >
-                      {_.bathrooms}
-                    </Typography>
-                  </Grid>
-                  <Grid item xs={6} display="flex" justifyContent={'center'}>
-                    <Icon
-                      sx={{
-                        width: '3em',
-                        height: '3em',
-                        padding: 0.5,
-                        lineHeight: '1em',
-                      }}
-                    >
-                      <SvgGarage color={theme.palette.common.white} />
-                    </Icon>
-                    <Typography
-                      fontFamily="Cormorant"
-                      variant="h4"
-                      alignSelf="center"
-                      component="h4"
-                      color="white"
-                      sx={{ fontStyle: 'italic' }}
-                      mx={1.32}
-                    >
-                      &#10006;
-                    </Typography>
-                    <Typography
-                      fontFamily="Cormorant"
-                      variant="h2"
-                      alignSelf="center"
-                      component="h4"
-                      color="white"
-                      sx={{ fontStyle: 'italic' }}
-                    >
-                      {_.carplaces}
-                    </Typography>
-                  </Grid>
+                <Grid xs={active > -1 && index === active ? 2 : 1} sx={{
+								
+								transitionProperty: "all",
+								transitionTimingFunction:"ease-in",
+								transitionDuration: ".2s",
+								
+								transitionDelay: "15s", display: "flex" }} item container>
+								<RowIconsComponent
+								index={index}
+								_={_}
+								fontColor={active > -1 && index === active ? theme.palette.common.blue : "white"}
+								SvgBedroom={<SvgBedroom
+								
+									color={
+										
+										
+										active > -1 && index === active ? theme.palette.common.blue : "white"} />}  SvgBathroom={<SvgBathroom color={active > -1 && index === active ? theme.palette.common.blue : "white"} />} SvgGarage={<SvgGarage color={active > -1 && index === active ? theme.palette.common.blue : "white"} />}
+								/>
                 </Grid>
+								<Slide container={containerRef.current} in={active > -1 && index === active } direction="right" timeout={700}>
+
+							 <Grid sx={{dispay: "flex", opacity: active > -1 && index === active ? 1 : 0, 			transitionProperty: "all",
+								transitionTimingFunction:"ease-in",
+								transitionDuration: ".2s", transitionDelay: ".5s"   }} xs={active > -1 && index === active ? 2 : 0}>
+									<ArrowRight
+									color={theme.palette.common.blue}
+									
+									/>
+									
+									</Grid> 
+								</Slide>
               </Grid>
-              <div ref={ref}>
+              <div >
                 <Image
                   style={{
                     position: 'absolute',
                     zIndex: 100,
-                    '&:hover': {
-                      filter: 'brightness(1)',
-                    },
-                    filter: !ContentinView
-                      ? 'saturate(60%) brightness(1)'
-                      : 'saturate(100%) brightness(0.8)',
+										transition: "all .725s ease-in-out",
+										borderBottomLeftRadius: active > -1 && index === active ? "80px": 0,
+										borderTopRightRadius: active > -1 && index === active ? "80px": 0,
+										filter: active > -1 && index === active ? "brightness(1) opacity(60%)" : "brightness(.85) opacity(100%)"
+                  
                   }}
                   src={_.image}
                   layout="responsive"
                   width={320}
-                  height={240}
+                  height={260}
                 ></Image>
               </div>
+						{active > -1 && index === active ? <Grid>
+
+
+
+						</Grid> : null}	
             </Grid>
           )
         })}
@@ -241,8 +164,8 @@ const SliderLegend = ({ numOfRooms, numOfBathRooms, numOfCarPlaces }: any) => {
   return (
     <Box display="flex" justifyContent="space-around">
       <Box display="flex" alignItems="center">
-        <Icon sx={{ width: '2em', height: '2em', padding: 1 }}>
-          <SvgBedroom color={theme.palette.common.white} />
+        <Icon sx={{ width: '2em', height: '2em', padding:1 }}>
+          <SvgBedroom color={theme.palette.primary.main}/>
         </Icon>
         <Typography
           color={theme.palette.primary.main}
@@ -254,8 +177,8 @@ const SliderLegend = ({ numOfRooms, numOfBathRooms, numOfCarPlaces }: any) => {
         </Typography>
       </Box>
       <Box display="flex" alignItems="center">
-        <Icon sx={{ width: '2em', height: '2em', padding: 1 }}>
-          <SvgBathroom color={theme.palette.common.white} />
+        <Icon sx={{ width: '2em', height: '2em', padding:1 }}>
+          <SvgBathroom color={theme.palette.primary.main} />
         </Icon>
         <Typography
           color={theme.palette.primary.main}
@@ -268,7 +191,7 @@ const SliderLegend = ({ numOfRooms, numOfBathRooms, numOfCarPlaces }: any) => {
       </Box>
       <Box display="flex" alignItems="center">
         <Icon sx={{ width: '2em', height: '2em', padding: 1 }}>
-          <SvgGarage color={theme.palette.common.white} />
+          <SvgGarage color={theme.palette.primary.main} />
         </Icon>
         <Typography
           color={theme.palette.primary.main}
@@ -296,6 +219,11 @@ const OfferSliderComponent = (props: Props) => {
   const links = [{ type: '1' }, { type: '2' }, { type: '3' }, { type: '4' }]
   const [link, setCurrentLink] = useState(offers[0].type)
 
+  const [contentInView, setContentInView] = React.useState(true)
+
+  const titleRef = React.useRef(null)
+
+
   const handleNext = () => {
     swiperRef!.current.swiper.slideNext()
     contentRef!.current.swiper.slideNext()
@@ -311,14 +239,67 @@ const OfferSliderComponent = (props: Props) => {
     setCurrentLink(offers[swiper.realIndex].type)
   }
 
+
+  const ContentIsInView = () => {
+    if (!titleRef.current) {
+      return
+    } else {
+      const rect = titleRef.current.getBoundingClientRect()
+      return (
+				rect.top - 600 <= rect.height && rect.bottom >= 300
+      )
+    }
+  }
+
+  const ContentScrollHandler = () => {
+    setContentInView(ContentIsInView())
+  
+  }
+
+
+	React.useEffect(() => {
+    setContentInView(ContentIsInView())
+    window.addEventListener('scroll', ContentScrollHandler)
+    return () => {
+      window.removeEventListener('scroll', ContentScrollHandler)
+    }
+  }, [contentInView])
+
+  const [isFaded, setIsFaded]= useState(false)
+
+useEffect(() => {
+delay(()=> {setIsFaded(true)}, 2000)
+
+}, [isFaded])
+
+
   return (
     <Container>
       {match ? (
         <>
+				<Fade in={
+	isFaded
+					
+					}
+					timeout={400}
+					>
+				<Typography fontFamily="Cormorant" variant="h2"  ref={titleRef}
+				color={ contentInView ? theme.palette.primary.main : theme.palette.common.blue} fontWeight={600} sx={{textAlign: "center", maxWidth: 600, display: "flex", marginLeft: "auto", marginRight: "auto", marginBottom: theme.spacing(12)}}>Porozmawiajmy o nieruchomościach</Typography>
+					</Fade>
           <MobileOffers offers={offers} />
+			
         </>
       ) : (
         <>
+							<Fade in={
+	isFaded
+					
+					}
+					timeout={400}
+					>
+				<Typography my={4} fontFamily="Cormorant" variant="h2"  ref={titleRef}
+				color={ contentInView ? theme.palette.primary.main : theme.palette.common.blue} fontWeight={600} sx={{textAlign: "center"}}>Porozmawiajmy o nieruchomościach</Typography>
+					</Fade>
           <Box mb={8}>
             <div className="slider-wrapper">
               <Box

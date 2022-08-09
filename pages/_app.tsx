@@ -9,7 +9,7 @@ import Head from 'next/head'
 import * as React from 'react'
 import Layout from 'src/components/layout'
 import '../src/styles/swiper.css'
-
+import '../src/styles/global.css'
 //Todo
 
 // Client-side cache, shared for the whole session of the user in the browser.

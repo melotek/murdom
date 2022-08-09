@@ -6,7 +6,7 @@ type LinkRef = HTMLButtonElement
 type NextLinkProps = Omit<ButtonProps, 'href'> &
   Pick<LinkProps, 'href' | 'as' | 'prefetch' | 'locale'> & {
     children: string
-    sx: any
+    sx?: any
   }
 
 const LinkButtonContained = (

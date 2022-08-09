@@ -21,12 +21,14 @@ const HeaderComponent = (props: Props) => {
   const [svgWidth, setsvgWidth] = React.useState(null)
   const [svgHeight, setsvgHeigh] = React.useState(null)
   const { height, width } = useWindowDimensions()
-  const [ContentinView, setContentInView] = React.useState(false)
-  const [buttonInView, setButtonInView] = React.useState(false)
+  const [imageinView, setimageinView] = React.useState(false)
+  const [buttonInView, setButtonInView] = React.useState(true)
+  const [contentInView, setContentInView] = React.useState(true)
 
-  const ContentRef = React.useRef(null)
+  const contentRef = React.useRef(null)
+  const buttonRef = React.useRef(null)
 
-  const ContentIsInView = () => {
+  const ImageIsInView = () => {
     if (!imageRef.current) {
       return
     } else {
@@ -39,40 +41,64 @@ const HeaderComponent = (props: Props) => {
   }
 
   const ButtonIsInView = () => {
-    if (!imageRef.current) {
+    if (!buttonRef.current) {
       return
     } else {
-      const rect = imageRef.current.getBoundingClientRect()
+      const rect = buttonRef.current.getBoundingClientRect()
       return (
-        rect.top - rect.height / 2 <= rect.height &&
-        rect.bottom >= rect.height / 2
+        rect.top - 600 <= rect.height && rect.bottom >= 300
+      )
+    }
+  }
+  const ContentIsInView = () => {
+    if (!contentRef.current) {
+      return
+    } else {
+      const rect = contentRef.current.getBoundingClientRect()
+      return (
+         rect.bottom >= 200
       )
     }
   }
 
-  const ContentscrollHandler = () => {
-    setContentInView(ContentIsInView())
+  const ImageScrollHandler = () => {
+    setButtonInView(ImageIsInView())
+  
+  }
+  const ButtonScrollHandler = () => {
     setButtonInView(ButtonIsInView())
+  
+  }
+  const ContentScrollHandler = () => {
+    setContentInView(ContentIsInView())
+  
   }
 
   React.useEffect(() => {
-    setContentInView(ContentIsInView())
-    setButtonInView(ButtonIsInView())
-
-    window.addEventListener('scroll', ContentscrollHandler)
+    setimageinView(ImageIsInView())
+    window.addEventListener('scroll', ImageScrollHandler)
     return () => {
-      window.removeEventListener('scroll', ContentscrollHandler)
+      window.removeEventListener('scroll', ImageScrollHandler)
     }
   }, [])
+  React.useEffect(() => {
+    setButtonInView(ButtonIsInView())
+    window.addEventListener('scroll', ButtonScrollHandler)
+    return () => {
+      window.removeEventListener('scroll', ButtonScrollHandler)
+    }
+  }, [buttonInView])
 
-  //         if (imageRefMobile?.current?.clientHeight && imageRefMobile?.current?.clientWidth) {
-  //             setsvgWidthMobile(imageRefMobile.current.clientWidth)
-  //             setsvgHeightMobile(imageRefMobile.current.clientHeight)
-  //             console.log(svgHeightMobile)
-  //         }
-  //     },
-  //     [imageRefMobile, svgHeightMobile, svgWidthMobile],
-  // )
+  
+  React.useEffect(() => {
+    setContentInView(ContentIsInView())
+    window.addEventListener('scroll', ContentScrollHandler)
+    return () => {
+      window.removeEventListener('scroll', ContentScrollHandler)
+    }
+  }, [contentInView])
+
+  
 
   useEffect(() => {
     if (
@@ -92,17 +118,17 @@ const HeaderComponent = (props: Props) => {
   }, [imageRef, width, height])
 
   return (
-    <Box mb={16}>
+    <Box mb={12}>
       {match ? (
         <Box display="flex">
           <Box width="50%" height="70vh" position="relative" ref={imageRef}>
-            <svg
+            {/* <svg
               style={{
                 zIndex: 4000,
                 position: 'absolute',
                 top: 114,
                 transition:
-                  !ContentinView &&
+                  !imageinView &&
                   theme.transitions.create(['height'], {
                     duration: theme.transitions.duration.standard,
                     easing: theme.transitions.easing.easeInOut,
@@ -121,9 +147,10 @@ const HeaderComponent = (props: Props) => {
                 stroke="black"
                 strokeWidth="12px"
                 strokeOpacity={0}
-                opacity={ContentinView ? 0.3 : 1}
+                // opacity={imageinView ? 0.3 : 1}
+                opacity={0.3}
               />
-            </svg>
+            </svg> */}
 
             <Image
               style={
@@ -154,6 +181,7 @@ const HeaderComponent = (props: Props) => {
               gutterBottom
               component="h1"
               variant="body1"
+							color={theme.palette.common.blue}
               sx={(theme) => ({
                 [theme.breakpoints.only('sm')]: {
                   marginBottom: 3,
@@ -180,6 +208,9 @@ const HeaderComponent = (props: Props) => {
               gutterBottom
               component="h2"
               variant="h2"
+							ref={contentRef}
+							color={contentInView ? theme.palette.primary.main : theme.palette.common.blue}
+					
               sx={(theme) => ({
                 textTransform: 'uppercase',
 
@@ -200,16 +231,18 @@ const HeaderComponent = (props: Props) => {
               mb={4}
               lineHeight={1.4}
             >
-              Wybudowane z myślą o Twojej przyszłości.
+              Wybudowaliśmy solidne domy, w pięknej okolicy.
             </Typography>
             <Typography
               gutterBottom
               component="p"
+							variant="body1"
               mb={4}
-              color={theme.palette.text.primary}
+						
+              
             >
               {' '}
-              Nasze nieruchomości zaprojektowaliśmy tak, aby dawały ci dużo
+              Nasze nieruchomości zaprojektowaliśmy tak, aby dawały Tobie dużo
               przestrzeni i komfortu życiowego. Proste bryły niwelują utratę
               energii w zimie, a malownicza zielona okolica rekompensuję każdą
               chwilę zpędzoną w zgiełku miasta.
@@ -218,9 +251,11 @@ const HeaderComponent = (props: Props) => {
             <LinkButtonContained
               disableRipple
               disableElevation
-              sx={{ borderRadius: '0.1em' }}
+							ref={buttonRef}
+              sx={{ borderRadius: '0.1em', backgroundColor: buttonInView ? theme.palette.primary.main : theme.palette.common.blue }}
               href="/domy-rabien-ab"
               children="Oferta"
+						
             />
           </Box>
         </Box>
@@ -236,7 +271,7 @@ const HeaderComponent = (props: Props) => {
               zIndex: 30,
             }}
           >
-            <svg
+            {/* <svg
               preserveAspectRatio="none"
               width={svgWidthMobile * 0.5}
               height={svgHeightMobile}
@@ -252,7 +287,7 @@ const HeaderComponent = (props: Props) => {
                 strokeOpacity={0}
                 opacity={0.5}
               />
-            </svg>
+            </svg> */}
           </Box>
           <Box
             ref={imageRefMobile}

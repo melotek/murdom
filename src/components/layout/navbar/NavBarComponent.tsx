@@ -88,12 +88,17 @@ const NavBarComponent = (props: Props) => {
 
   const router = useRouter()
 
-  console.log()
 
   return (
+<Box sx={{background: theme.palette.background.default, position: match && "fixed", zIndex: 3000, width: "100%"}}>
+
+
+
+
     <TopBarCustom isOpen={isOpen} match={match} theme={theme}>
-      <Box ref={topBarRef}>
+      <Box ref={topBarRef} 			>
         <Box
+	
           py={match ? 0 : 2}
           justifyContent="space-between"
           alignItems="center"
@@ -106,7 +111,7 @@ const NavBarComponent = (props: Props) => {
               isOpen={isOpen}
               component="nav"
               match={match}
-              sx={{ justifyContent: 'center' }}
+              sx={{ justifyContent: "center" }}
             >
               <Box display="flex" width="100%">
                 <List
@@ -213,7 +218,7 @@ const NavBarComponent = (props: Props) => {
                 left: 0,
                 width: '100%',
                 height: '0.15em',
-                backgroundColor: theme.palette.common.white,
+                backgroundColor: theme.palette.primary.main,
                 opacity: 0,
                 transition: 'opacity 300ms, transform 300ms',
               },
@@ -337,6 +342,8 @@ const NavBarComponent = (props: Props) => {
         </ListCustom>
       )}
     </TopBarCustom>
+
+		</Box>
   )
 }
 

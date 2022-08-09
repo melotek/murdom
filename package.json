@@ -27,6 +27,7 @@
     "prettier": "^2.7.1",
     "react": "latest",
     "react-dom": "latest",
+    "react-use": "^17.4.0",
     "svg-to-ts": "^8.8.1",
     "swiper": "^8.3.2"
   },
