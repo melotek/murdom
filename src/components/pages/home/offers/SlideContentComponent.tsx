@@ -151,7 +151,7 @@ const RowComponent = ({
   // const matches = useMediaQuery(theme.breakpoints.up("md"))
 
   return (
-    <Box display="flex">
+    <Box display="flex" my={1}>
       <Typography
         sx={{
           letterSpacing: 2,
@@ -201,6 +201,7 @@ const SlideContentComponent = ({
     <Box sx={{ backgroundColor: theme.palette.background.default }} mb={4}>
       <RowComponent
         // icon={<SvgHouseDraw/>}
+				
         theme={theme}
         title="Powieżchnia użytkowa:"
         value={livingmeters}

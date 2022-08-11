@@ -47,7 +47,7 @@ function MobileOffers({ offers }: any) {
 
   return (
     <Box sx={{ width: '100%'}}>
-      <Grid container rowSpacing={0} columnSpacing={0} component="ul" sx={{padding: 0 }}>
+      <Grid container rowSpacing={0} columnSpacing={0} component="ul" sx={{padding: 0, listStyle: "none" }}>
         {offers.map((_: any, index: number) => {
           return (
             <Grid component="li" xs={6} sx={{ position: 'relative', }}
@@ -73,7 +73,24 @@ function MobileOffers({ offers }: any) {
                     alignSelf="center"
                     
 										color={active > -1 && index === active ? theme.palette.common.blue : "white"}
-                    sx={{ fontStyle: 'italic', transform: "scaleY(1.35)",	transition: "color .2s ease-in" }}
+                    sx={{ fontStyle: 'italic', transform: "scaleY(1.35)",	transition: "color .2s ease-in",
+									  position: 'relative',
+										'&::before': {
+											content: '""',
+											position: 'absolute',
+											// display:"none",
+											bottom: 0,
+											left: 0,
+											width: '100%',
+											height: '0.02em',
+											backgroundColor: theme.palette.primary.main,
+									
+											opacity: active > -1 && index === active ? 1 : 0,
+											transition: 'opacity 300ms, transform 300ms',
+										},
+									
+									
+									}}
                   >
                     0{index + 1}
                   </Typography>
@@ -144,11 +161,11 @@ function MobileOffers({ offers }: any) {
                   height={260}
                 ></Image>
               </div>
-						{active > -1 && index === active ? <Grid>
+						{/* {active > -1 && index === active ? <Grid>
 
 
 
-						</Grid> : null}	
+						</Grid> : null}	 */}
             </Grid>
           )
         })}
@@ -276,19 +293,22 @@ delay(()=> {setIsFaded(true)}, 2000)
   return (
     <Container>
       {match ? (
-        <>
+        <Box>
 				<Fade in={
 	isFaded
 					
 					}
 					timeout={400}
 					>
-				<Typography fontFamily="Cormorant" variant="h2"  ref={titleRef}
-				color={ contentInView ? theme.palette.primary.main : theme.palette.common.blue} fontWeight={600} sx={{textAlign: "center", maxWidth: 600, display: "flex", marginLeft: "auto", marginRight: "auto", marginBottom: theme.spacing(12)}}>Porozmawiajmy o nieruchomościach</Typography>
+				<Typography my={8} fontFamily="Cormorant" variant="h2"  ref={titleRef}
+				color={ contentInView ? theme.palette.primary.main : theme.palette.common.blue} fontWeight={600} sx={{textAlign: "center", maxWidth: 600, display: "flex", marginLeft: "auto", marginRight: "auto",  }}>Porozmawiajmy o nieruchomościach</Typography>
 					</Fade>
+					<Box pb={8}>
+
           <MobileOffers offers={offers} />
-			
-        </>
+					</Box>
+					<Divider sx={{ marginBottom: 0.5 }} />
+        </Box>
       ) : (
         <>
 							<Fade in={
@@ -300,12 +320,12 @@ delay(()=> {setIsFaded(true)}, 2000)
 				<Typography my={4} fontFamily="Cormorant" variant="h2"  ref={titleRef}
 				color={ contentInView ? theme.palette.primary.main : theme.palette.common.blue} fontWeight={600} sx={{textAlign: "center"}}>Porozmawiajmy o nieruchomościach</Typography>
 					</Fade>
-          <Box mb={8}>
+          <Box mt={4} mb={8}>
             <div className="slider-wrapper">
               <Box
                 sx={{ width: '100%', distply: 'flex', flexDirection: 'column' }}
               >
-                <Divider sx={{ marginBottom: 0.5 }} />
+              
                 <Box display="flex" sx={{ justifyContent: 'space-between' }}>
                   {!match && (
                     <Box sx={{ alignSelf: 'center' }} display="flex">
@@ -326,7 +346,7 @@ delay(()=> {setIsFaded(true)}, 2000)
                         variant="body1"
                         color={theme.palette.primary.main}
                       >
-                        4
+                      {offers.length}
                       </Typography>
                     </Box>
                   )}
@@ -424,7 +444,7 @@ delay(()=> {setIsFaded(true)}, 2000)
               <LinkButtonContained
                 disableRipple
                 disableElevation
-                sx={{ width: '100vw', borderRadius: '0.1em' }}
+                sx={{ width: "100%", borderRadius: '0.1em' }}
                 href={`/domy/${link}`}
                 children="nieruchomości"
                 fullWidth={true}

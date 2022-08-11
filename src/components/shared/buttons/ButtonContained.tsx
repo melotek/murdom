@@ -7,10 +7,11 @@ type NextLinkProps = Omit<ButtonProps, 'href'> &
   Pick<LinkProps, 'href' | 'as' | 'prefetch' | 'locale'> & {
     children: string
     sx?: any
+		color?: any
   }
 
 const LinkButtonContained = (
-  { href, as, prefetch, locale, children, sx }: NextLinkProps,
+  { href, as, prefetch, locale, children, sx, color }: NextLinkProps,
   ref: Ref<LinkRef>
 ) => {
   const theme = useTheme()
@@ -21,6 +22,7 @@ const LinkButtonContained = (
         disableFocusRipple
         variant="contained"
         size="large"
+				color={color}
         ref={ref}
         sx={{
           letterSpacing: 2.3,

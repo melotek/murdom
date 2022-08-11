@@ -108,7 +108,7 @@ const FooterComponent = () => {
 						</Box>
 					</Box>
 				</Paper >
-				<SvgLayer />
+				{/* <SvgLayer /> */}
 			</Box >
 		</Container >
 	)

@@ -40,7 +40,7 @@ export default function MyApp(props: MyAppProps) {
   customtheme = responsiveFontSizes(customtheme)
   const clientRef = React.useRef<null | any>(null)
 
-  clientRef! && console.log(clientRef)
+ 
 
   const { Component, emotionCache = clientSideEmotionCache, pageProps } = props
   return (

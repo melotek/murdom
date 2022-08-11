@@ -49,7 +49,6 @@ const getDesignTokens = (mode: PaletteMode) => ({
       ? {
           primary: {
             main: 'hsl(37, 52%, 58%)',
-            dark: '#181d24',
             contrastText: 'hsl(60, 2%, 60%)',
           },
           secondary: { main: 'hsla(37, 52%, 58%, .7)' },
@@ -59,7 +58,7 @@ const getDesignTokens = (mode: PaletteMode) => ({
           },
           common: {
             white: '#fff',
-            blue: 'hsl(215, 20%, 12%)',
+            blue: '#181D24',
           },
           success: {
             main: '#020202',
@@ -75,7 +74,6 @@ const getDesignTokens = (mode: PaletteMode) => ({
       : {
           primary: {
             main: 'hsl(37, 52%, 58%)',
-            dark: '#181d24',
             contrastText: 'hsl(60, 2%, 60%)',
           },
           secondary: { main: 'hsla(37, 52%, 58%, .7)' },
@@ -86,7 +84,7 @@ const getDesignTokens = (mode: PaletteMode) => ({
 
           common: {
             white: '#fff',
-            blue: 'hsl(215, 20%, 12%)',
+            blue: '#181D24',
           },
           success: {
             main: '#020202',
@@ -109,7 +107,7 @@ const getDesignTokens = (mode: PaletteMode) => ({
     MuiButton: {
       styleOverrides: {
         root: {
-          color: 'dark' ? '#fff' : 'hsl(0, 2%, 8%)',
+          color: 'dark' ? '#fff' : '#181D24',
         },
       },
     },
