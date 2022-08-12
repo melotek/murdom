@@ -26,7 +26,6 @@ const CallUsComponent = () => {
 
 
 
-console.log(  theme.palette.common )
 
 
 

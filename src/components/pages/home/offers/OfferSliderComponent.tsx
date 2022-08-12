@@ -31,6 +31,7 @@ import SlideContentComponent, { RowIconsComponent } from './SlideContentComponen
 import React from 'react'
 import { delay } from 'lodash'
 import { ArrowRight } from 'src/UI/ArrowRight'
+import Link from 'next/link'
 
 type Props = {}
 
@@ -55,6 +56,9 @@ function MobileOffers({ offers }: any) {
 						onMouseOver={		() => setActive(index)}
 						onMouseLeave={	() =>	setActive(-1)}
 						>
+							<Link  href="/domy/[typy]" as={"/domy/" + _.type}>
+							<a>
+							
               <Grid
 								ref={containerRef}
                 container
@@ -166,6 +170,7 @@ function MobileOffers({ offers }: any) {
 
 
 						</Grid> : null}	 */}
+						</a></Link>
             </Grid>
           )
         })}

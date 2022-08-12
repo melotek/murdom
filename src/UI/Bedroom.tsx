@@ -4,7 +4,7 @@ import * as React from 'react'
 function SvgBedroom(props: React.SVGProps<SVGSVGElement>) {
   const theme = useTheme()
   return (
-    <svg viewBox="0 0 100 79" fill="none" {...props}
+    <svg viewBox="0 0 113 83" fill="none" {...props}
 
 		
 		>

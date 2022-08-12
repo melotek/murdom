@@ -1,8 +1,12 @@
-import { Container } from "@mui/material";
+import FooterComponent from "@footer/FooterComponent";
+import { Box, Container, Divider, Grid } from "@mui/material";
+import NavBarComponent from "@navbar/NavBarComponent";
 import content, { Offers } from "data";
 import { filter } from "lodash";
 import { GetStaticPathsResult, GetStaticPropsContext } from 'next';
 import { HeaderComponent } from "src/components/pages/domy";
+import PlusesComponent from "src/components/pages/domy/Pluses";
+import LogoBig from "src/UI/LogoBig";
 
 
 type PageParams = {
@@ -15,7 +19,27 @@ const { offers } = content;
 const Typy = (
     { data }: any) => {
     return (
-        <Container><HeaderComponent data={data} /></Container>
+			<>
+      <NavBarComponent/>
+<>
+
+					<HeaderComponent data={data} />
+	
+					<Container>
+
+						
+			
+										
+										
+<Divider/>
+
+					</Container>
+<PlusesComponent data={data} />
+
+</>
+				
+     
+			</>
     )
 }
 

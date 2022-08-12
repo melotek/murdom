@@ -17,6 +17,10 @@ export type Offers = {
   description: string
   carplacesDescription: string
   kind: string
+  coords: {
+    lat: number
+    long: number
+  }
 }
 
 export type Testimony = {
@@ -73,6 +77,7 @@ const content: Content = {
       description:
         'Największy z naszych oferowanych domów, posiada również duży ogródek, stan realizacji surowy, możemy jeszcze na życzenie zmodyfikować układ ścian działowych.',
       kind: 'Dom wolnostojący',
+      coords: { lat: 19.2952482, long: 51.7870749 },
     },
     {
       title: 'Dwieście czterdzieści',
@@ -94,6 +99,7 @@ const content: Content = {
       description:
         'Największy z naszych oferowanych domów, posiada również duży ogródek, stan realizacji surowy, możemy jeszcze na życzenie zmodyfikować układ ścian działowych.',
       kind: 'Dom wolnostojący',
+      coords: { lat: 19.2952482, long: 51.7870749 },
     },
     {
       title: 'Dwieście dwadzieścia',
@@ -115,6 +121,7 @@ const content: Content = {
       description:
         'Największy z naszych oferowanych domów, posiada również duży ogródek, stan realizacji surowy, możemy jeszcze na życzenie zmodyfikować układ ścian działowych.',
       kind: 'Dom wolnostojący',
+      coords: { lat: 19.2952482, long: 51.7870749 },
     },
     {
       title: 'Dwieście',
@@ -136,6 +143,7 @@ const content: Content = {
       description:
         'Największy z naszych oferowanych domów, posiada również duży ogródek, stan realizacji surowy, możemy jeszcze na życzenie zmodyfikować układ ścian działowych.',
       kind: 'Dom wolnostojący',
+      coords: { lat: 19.2952482, long: 51.7870749 },
     },
   ],
   testimonies: [

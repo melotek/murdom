@@ -4,7 +4,7 @@ function SvgBasement(props: React.SVGProps<SVGSVGElement>) {
   const theme= useTheme()
 
   return (
-    <svg viewBox="0 0 87 84" fill="none" {...props}>
+    <svg viewBox="0 0 113 83" fill="none" {...props}>
       <path
         stroke={theme.palette.primary.main}
         strokeWidth={2}
