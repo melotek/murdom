@@ -43,7 +43,7 @@ function MobileOffers({ offers }: any) {
 	const containerRef = useRef(null)
 
 	
-
+	console.log(offers)
 
 
   return (
@@ -149,6 +149,10 @@ function MobileOffers({ offers }: any) {
 								</Slide>
               </Grid>
               <div >
+
+
+
+								
                 <Image
                   style={{
                     position: 'absolute',
@@ -161,8 +165,8 @@ function MobileOffers({ offers }: any) {
                   }}
                   src={_.image}
                   layout="responsive"
-                  width={320}
-                  height={260}
+                  width={1600}
+                  height={1200}
                 ></Image>
               </div>
 						{/* {active > -1 && index === active ? <Grid>

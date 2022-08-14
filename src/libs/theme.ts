@@ -101,6 +101,9 @@ const getDesignTokens = (mode: PaletteMode) => ({
   },
   typography: {
     fontSize: 12,
+    body1: {
+      fontSize: 14,
+    },
     fontFamily: ['Montserrat', 'Cormorant'].join(','),
   },
   components: {
