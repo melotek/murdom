@@ -52,13 +52,13 @@ export function getStaticProps(context: GetStaticPropsContext<PageParams>) {
     // const content = filter(offers, { type: router.query.typ })
     // const params = offers.map((_) => _.title)
     // console.log(params)
-const place = "hospital"
+// const place = "hospital"
     const data: Offers[] = filter(offers, { type: context.params.type })
-		const apiKey= "AIzaSyCaEeXGW5Wq3YZkHCQdgKVIDczyeSAnCYs"
+		// const apiKey= "AIzaSyCaEeXGW5Wq3YZkHCQdgKVIDczyeSAnCYs"
 
-		const {coords} = data[0]
+		// const {coords} = data[0]
 
-		const  url = `https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=${coords.lat},${coords.long}&type=${place}&radius=500&key=AIzaSyCaEeXGW5Wq3YZkHCQdgKVIDczyeSAnCYs`
+		// const  url = `https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=${coords.lat},${coords.long}&type=${place}&radius=500&key=AIzaSyCaEeXGW5Wq3YZkHCQdgKVIDczyeSAnCYs`
 
 
 		// const getPlaces = async (url) => {

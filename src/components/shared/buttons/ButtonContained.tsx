@@ -22,7 +22,7 @@ const LinkButtonContained = (
         disableFocusRipple
         variant="contained"
         size="large"
-				color={color}
+				// color={color}
         ref={ref}
         sx={{
           letterSpacing: 2.3,
